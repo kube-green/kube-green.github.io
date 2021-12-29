@@ -12,6 +12,10 @@ How many of your dev/preview pods stay on during weekends? Or at night? It's a w
 
 Keep reading to find out how to use it, and if you have ideas on how to improve *kube-green*, open an issue, we'd love to hear them!
 
+## Tutorial
+
+Try our tutorial to get started. Are available [here](tutorials/kind.md).
+
 ## Install
 
 To start using kube-green, you need to install it in a cluster kubernetes.

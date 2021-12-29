@@ -1,6 +1,7 @@
 {{ define "packages" }}
 ---
 title: "API Reference"
+sidebar_position: 10
 ---
 
 {{ with .packages}}

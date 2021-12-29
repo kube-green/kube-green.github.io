@@ -27,10 +27,9 @@ export GOROOOT="$(go env GOROOT)"
 export GOBIN="${tmpdir}/bin"
 go install github.com/ahmetb/gen-crd-api-reference-docs@v0.3.0
 
-# mkdir -p ${GOPATH}/src/github.com/kube-green
-# gitdir="${GOPATH}/src/github.com/kube-green/kube-green"
-# git clone --depth 1 "git@github.com:kube-green/kube-green.git" "${gitdir}"
-gitdir="/Users/davidebianchi/Lab/kube-green/kube-green"
+mkdir -p ${GOPATH}/src/github.com/kube-green
+gitdir="${GOPATH}/src/github.com/kube-green/kube-green"
+git clone --depth 1 "git@github.com:kube-green/kube-green.git" "${gitdir}"
 cd "${gitdir}"
 
 generate_reference_docs() {

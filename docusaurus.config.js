@@ -9,7 +9,7 @@ const LOGO_IMAGE = 'img/logo.png'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'kube-green',
-  tagline: 'Make your k8s clusters more green',
+  tagline: 'Make your Kubernetes clusters more green',
   url: 'https://kube-green.github.io',
   baseUrl: '/kube-green/',
   favicon: LOGO_IMAGE,
@@ -65,7 +65,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'getting-started',
             position: 'left',
             label: 'Docs',
           },

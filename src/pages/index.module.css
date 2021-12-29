@@ -8,12 +8,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* background-image: url('/img/logo-animated.gif');
-  background-size: 100%;
-  background-repeat: repeat-y;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%; */
+  background-color: #135838;
+  color: white;
 }
 
 @media screen and (max-width: 966px) {

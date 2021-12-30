@@ -1,5 +1,7 @@
 name: Build
-on: workflow_call
+on:
+  workflow_call:
+  push:
 jobs:
   generate-docs:
     name: Build docs

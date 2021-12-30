@@ -7,4 +7,4 @@ jobs:
   github-pages:
     needs: docs-build
     uses: kube-green/website/.github/workflows/github-pages.yml@initial-impl
-
+    if: ${{ github.ref == 'refs/heads/main' }}

@@ -3,8 +3,8 @@ on:
   push:
 jobs:
   docs-build:
-    uses: kube-green/website/.github/workflows/docs-build.yml@main
+    uses: kube-green/website/.github/workflows/docs-build.yml@initial-impl
   github-pages:
     needs: docs-build
-    uses: kube-green/website/.github/workflows/github-pages.yml@main
+    uses: kube-green/website/.github/workflows/github-pages.yml@initial-impl
 

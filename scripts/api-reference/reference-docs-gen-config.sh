@@ -29,8 +29,19 @@ go install github.com/ahmetb/gen-crd-api-reference-docs@v0.3.0
 
 mkdir -p ${GOPATH}/src/github.com/kube-green
 gitdir="${GOPATH}/src/github.com/kube-green/kube-green"
-git clone --depth 1 "git@github.com:kube-green/kube-green.git" "${gitdir}"
+git clone "https://github.com/kube-green/kube-green.git" "${gitdir}"
 cd "${gitdir}"
+
+generate_reference_docs_per_ref(){
+  checkout "$1"
+  generate_reference_docs "$2"
+}
+
+checkout() {
+ ref="$1"
+ echo "--- Checkout to branch ${ref} ---"
+  git checkout "${ref}"
+}
 
 generate_reference_docs() {
   apiversion="$1"
@@ -43,4 +54,4 @@ generate_reference_docs() {
   echo "--- Done generating reference docs ---"
 }
 
-generate_reference_docs "v1alpha1"
+generate_reference_docs_per_ref "add-doc-file" "v1alpha1"

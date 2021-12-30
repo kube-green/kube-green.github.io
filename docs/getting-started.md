@@ -19,10 +19,10 @@ Try our tutorial to get started. Are available [here](tutorials/kind.md).
 ## Install
 
 To start using kube-green, you need to install it in a cluster kubernetes.
-[Click here](installation/install.md) to see how to install.
+[Click here](install.md) to see how to install.
 
 ## Create and deploy SleepInfo
 
-You can take a look at example configuration [available here](./usage/configuration.md), or create it with the docs [here](./usage/configuration.md).
+You can take a look at example configuration [available here](usage/configuration.md), or create it with the docs [here](usage/configuration.md).
 
 And that's it! Now, let *kube-green* to sleep your pods and to save CO2!

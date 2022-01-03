@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
 import ReactPlayer from 'react-player';
+
+import styles from './HomepageFeatures.module.css';
 
 type FeatureItem = {
   title: string;

@@ -33,21 +33,27 @@ export const FeatureList: FeatureItem[] = [
   },
 ];
 
-export function Feature({title, image, description, video}: FeatureItem) {
+export function Feature({
+  title, image, description, video,
+}: FeatureItem) {
   return (
     <div className={clsx('col col--6')}>
-      {image ? <div className="text--center">
-        <img className={styles.featureSvg} alt={title} src={image} />
-      </div> : null}
-      {video ? <div className="text--center">
-        <ReactPlayer
+      {image ? (
+        <div className="text--center">
+          <img alt={title} className={styles.featureSvg} src={image} />
+        </div>
+      ) : null}
+      {video ? (
+        <div className="text--center">
+          <ReactPlayer
+            className={styles.player}
             playing
-            style={{width: '100%'}}
             url={video}
             volume={0}
-            width={'100%'}
+            width="100%"
           />
-      </div> : null}
+        </div>
+      ) : null}
       <div className="text--center padding--md">
         <h3>{title}</h3>
         <p>{description}</p>
@@ -56,13 +62,18 @@ export function Feature({title, image, description, video}: FeatureItem) {
   );
 }
 
+Feature.defaultProps = {
+  image: null,
+  video: null,
+};
+
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {FeatureList.map((feature) => (
+            <Feature key={feature.title} {...feature} />
           ))}
         </div>
       </div>

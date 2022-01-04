@@ -27,6 +27,8 @@ jobs:
           cache: npm
       - name: install dependencies
         run: npm ci
+      - name: lint
+        run: npm run lint
       - name: check spell
         run: npm run spellcheck
       - name: Build website

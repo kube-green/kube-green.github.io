@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   docs-build:
-    uses: kube-green/website/.github/workflows/docs-build.yml@main
+    uses: kube-green/kube-green.github.io/.github/workflows/docs-build.yml@main
   deploy-github-pages:
     needs: docs-build
     runs-on: ubuntu-latest

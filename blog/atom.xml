@@ -28,7 +28,7 @@ spec:
   suspendCronJobs: true
 </code></pre><h2>What resources can you suspend?</h2><p>At the time of this post, with <em>kube-green</em> at <a href="https://github.com/kube-green/kube-green/tree/v0.2.0">v0.2.0</a>, it is possible to sleep only <strong>Deployment</strong>.
 Other resources will be added in the future.<br/>
-<!-- -->If you need some particular resources, write it in <a href="https://github.com/kube-green/kube-green/issues/77">this issue</a> to set it in roadmap!</p><h2>Conclusion</h2><p>Do you want to reduce the CO2 emissions and costs of your Kubernetes cluster?</p><p><a href="https://kube-green.github.io/docs/getting-started.mdx">Read our documentation</a> to install <strong>kube-green</strong> in your cluster!</p>]]></content>
+<!-- -->If you need some particular resources, write it in <a href="https://github.com/kube-green/kube-green/issues/77">this issue</a> to set it in roadmap!</p><h2>Conclusion</h2><p>Do you want to reduce the CO2 emissions and costs of your Kubernetes cluster?</p><p><a href="https://kube-green.github.io/docs/getting-started">Read our documentation</a> to install <strong>kube-green</strong> in your cluster!</p>]]></content>
         <author>
             <name>Davide Bianchi</name>
             <uri>https://github.com/davidebianchi</uri>

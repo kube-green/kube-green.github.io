@@ -8,6 +8,12 @@
   border-radius: 4px;
 }
 
+.card {
+  max-width: 550px;
+  margin: auto;
+  width: 100%;
+}
+
 .cardBody {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Decimal from 'decimal.js-light';
 
+import clsx from 'clsx';
 import styles from './ConsumptionCalculator.module.css';
 
 export default function ConsumptionCalculator() {
@@ -29,7 +30,7 @@ export default function ConsumptionCalculator() {
   );
 
   return (
-    <div className="card" style={{ width: '60%', margin: 'auto' }}>
+    <div className={clsx(styles.card, 'card')}>
       <div className="card__header">
         <h2>CO2 Calculator</h2>
       </div>

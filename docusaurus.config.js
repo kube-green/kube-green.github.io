@@ -30,12 +30,15 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: GITHUB_EDIT_BASE_URL,
+          editUrl: function({docPath, versionDocsDirPath}) {
+            if (docPath.match(/^apireference_[a-zA-Z0-9]+.md$/)) {
+              return undefined;
+            }
+            return `${GITHUB_EDIT_BASE_URL}${versionDocsDirPath}/${docPath}`;
+          },
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: `${GITHUB_EDIT_BASE_URL}blog/`,
         },
         theme: {

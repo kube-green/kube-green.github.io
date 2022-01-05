@@ -36,7 +36,8 @@
     "**/*.PNG",
     "**/img/**",
     "**/*.zip",
-    "**/*.json"
+    "**/*.json",
+    "blog/authors.yml"
   ],
   "allowCompoundWords": true,
   "ignoreRegExpList": [

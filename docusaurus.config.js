@@ -5,6 +5,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const LOGO_IMAGE = 'img/logo.png';
+const BASE_URL = 'https://github.com/kube-green/kube-green.github.io/edit/main/website/'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -29,13 +30,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/kube-green/website/edit/main/website/',
+          editUrl: `${BASE_URL}edit/main/docs/`,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/kube-green/website/edit/main/website/blog/',
+          editUrl: `${BASE_URL}edit/main/blog/`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -8,6 +8,19 @@
   border-radius: 4px;
 }
 
+.inputWrapper {
+  justify-content: space-between;
+  display: flex;
+  padding: 5px 0;
+}
+
+@media screen and (max-width: 325px) {
+  .inputWrapper {
+    display: block;
+  }
+}
+
+
 .card {
   max-width: 550px;
   margin: auto;
@@ -17,12 +30,6 @@
 .cardBody {
   display: flex;
   flex-direction: column;
-}
-
-.inputWrapper {
-  justify-content: space-between;
-  display: flex;
-  padding: 5px 0;
 }
 
 .subTitle {

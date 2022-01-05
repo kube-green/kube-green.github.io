@@ -18,8 +18,8 @@ const config = {
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',
   organizationName: 'kube-green',
-  projectName: 'website',
-  deploymentBranch: 'main',
+  projectName: 'kube-green.github.io',
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [

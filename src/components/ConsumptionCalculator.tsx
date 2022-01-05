@@ -29,7 +29,7 @@ export default function ConsumptionCalculator() {
   );
 
   return (
-    <div className="card" style={{ width: '50%', margin: 'auto' }}>
+    <div className="card" style={{ width: '60%', margin: 'auto' }}>
       <div className="card__header">
         <h2>CO2 Calculator</h2>
       </div>
@@ -58,7 +58,7 @@ export default function ConsumptionCalculator() {
         </div>
         <h3>
           Results
-          <h5>Total (Kg CO2eq/week)</h5>
+          <div className={styles.subTitle}>Total (Kg CO2eq/week)</div>
         </h3>
         <div>
           <div>

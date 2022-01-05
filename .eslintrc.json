@@ -22,7 +22,8 @@
         "@typescript-eslint"
     ],
     "ignorePatterns": [
-        "*.css"
+        "*.css",
+        "docusaurus.config.js"
     ],
     "settings": {
         "import/resolver": {

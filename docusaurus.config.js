@@ -4,14 +4,14 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const LOGO_IMAGE = 'img/logo.png'
+const LOGO_IMAGE = 'img/logo.png';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'kube-green',
   tagline: 'Make your Kubernetes clusters more green',
   url: 'https://kube-green.github.io',
-  baseUrl: '/kube-green/',
+  baseUrl: '/',
   favicon: LOGO_IMAGE,
   trailingSlash: true,
   onBrokenLinks: 'throw',
@@ -70,7 +70,7 @@ const config = {
             label: 'Docs',
           },
           // {to: '/tutorial', label: 'Tutorial', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/kube-green/kube-green',
             position: 'right',

@@ -18,3 +18,7 @@
   display: flex;
   padding: 5px 0;
 }
+
+.subTitle {
+  font-size: var(--ifm-h5-font-size);
+}

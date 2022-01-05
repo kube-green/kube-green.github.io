@@ -54,4 +54,4 @@ generate_reference_docs() {
   echo "--- Done generating reference docs ---"
 }
 
-generate_reference_docs_per_ref "add-doc-file" "v1alpha1"
+generate_reference_docs_per_ref "main" "v1alpha1"

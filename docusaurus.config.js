@@ -31,7 +31,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: `${GITHUB_EDIT_BASE_URL}docs/`,
+          editUrl: GITHUB_EDIT_BASE_URL,
         },
         blog: {
           showReadingTime: true,

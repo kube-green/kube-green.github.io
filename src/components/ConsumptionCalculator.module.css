@@ -1,0 +1,24 @@
+.inputCalc {
+  margin: 0;
+  max-width: 100%;
+  flex: 1 0 auto;
+  outline: 0;
+  padding: 5px;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: 4px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  justify-content: space-between;
+  display: flex;
+  padding: 5px 0;
+}
+
+.subTitle {
+  font-size: var(--ifm-h5-font-size);
+}

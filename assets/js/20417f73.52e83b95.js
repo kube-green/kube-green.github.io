@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[743],{7456:function(t){t.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/introduction","name":"introduction","count":1,"permalink":"/blog/tags/introduction"}')}}]);

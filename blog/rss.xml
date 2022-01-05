@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>kube-green Blog</title>
+        <link>https://kube-green.github.io/blog</link>
+        <description>kube-green Blog</description>
+        <lastBuildDate>Wed, 05 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Intro to kube-green]]></title>
+            <link>https://kube-green.github.io/blog/welcome-blog-post</link>
+            <guid>welcome-blog-post</guid>
+            <pubDate>Wed, 05 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to kube-green blog!]]></description>
+            <content:encoded><![CDATA[<p>Welcome to <em>kube-green</em> blog!</p><p>In this blog, we&#x27;ll introduce the new features of <em>kube-green</em>, and give you some other information about <em>kube-green</em>.</p><p>In this first tutorial, I will try to explain how it was born and why it is useful for reducing waste of resources.</p><h2>Environmental impact</h2><p>Everything we do online has an impact on the real world environment.<br/>
+<!-- -->From the emails in our inboxes to photos and videos on the cloud, from online games to digital currency, all this digital activity run on physical servers that constantly use energy.</p><p>Just some examples:</p><ul><li>minecraft all time emissions are about 600 million Kg of CO2, equivalent to drive at about 2,1 billion of km (<a href="https://www.saveonenergy.com/uk/environmental-impact-of-video-games/">reference</a>)</li><li>bitcoin produces between 22 and 22.9 million metric tons of carbon dioxide emissions a year, or between the levels produced by Jordan and Sri Lanka (<a href="https://www.reuters.com/technology/how-big-is-bitcoins-carbon-footprint-2021-05-13/">reference</a>)</li><li><a href="https://thanks-in-advance.com/">here</a> it is possible to see how much emissions our emails generate</li></ul><p>The Kubernetes clusters are not an exception. Also if they run in a cloud provider far from us they produces CO2, also if not used.</p><h2>The idea of kube-green</h2><p>In a cluster, non production namespaces are usually used only during business hours.<br/>
+<!-- -->The business hours are around 40 hours per week, respect the total number of weekly hours which are 168.<br/>
+<!-- -->Also, in Kubernetes the resources could be allocated (both CPU and memory, setting the request of a container) also if not used. This means most of the time the pods in these namespaces are unnecessarily consuming resources.</p><p>The basic idea of <em>kube-green</em> is to stop all pods in those namespaces.  </p><p><img src="/img/idea.png" alt="kube-green idea"/></p><h3>How it is possible?</h3><p><em>kube-green</em> is a Kubernetes controller, which define a Custom Resource Definition called <em>SleepInfo</em>. <em>SleepInfo</em> CRD define when stop and restart the pods in a namespace.</p><p>So, for example in development namespaces, it is possible to stop all the pods in non business hours: wake up every morning from monday to friday and stop every night from monday to friday.</p><p>An example of <em>SleepInfo</em> CRD to make it is:</p><pre><code class="language-yaml">apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: working-hours
+spec:
+  weekdays: &quot;1-5&quot;
+  sleepAt: &quot;20:00&quot;
+  wakeUpAt: &quot;08:00&quot;
+  timeZone: &quot;Europe/Rome&quot;
+  suspendCronJobs: true
+</code></pre><h2>What resources can you suspend?</h2><p>At the time of this post, with <em>kube-green</em> at <a href="https://github.com/kube-green/kube-green/tree/v0.2.0">v0.2.0</a>, it is possible to sleep only <strong>Deployment</strong>.
+Other resources will be added in the future.<br/>
+<!-- -->If you need some particular resources, write it in <a href="https://github.com/kube-green/kube-green/issues/77">this issue</a> to set it in roadmap!</p><h2>Conclusion</h2><p>Do you want to reduce the CO2 emissions and costs of your Kubernetes cluster?</p><p><a href="https://kube-green.github.io/docs/getting-started.mdx">Read our documentation</a> to install <strong>kube-green</strong> in your cluster!</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

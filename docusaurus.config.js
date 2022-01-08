@@ -63,8 +63,8 @@ const config = {
         title: 'kube-green',
         logo: {
           alt: 'kube-green Logo',
-          src: LOGO_IMAGE,
-          srcDark: 'img/logo-dark.png',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {

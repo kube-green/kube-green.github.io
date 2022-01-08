@@ -51,9 +51,9 @@ To wake up, the number of replicas is set to the number of replicas before the s
 
 #### CronJobs
 
-To sleep the *CronJob* resources, is set to suspend.
+To sleep the *CronJob* resources, are set as suspended.
 
-To wake up, the suspend field is set to the value before the sleep.
+To wake up, the suspend field is restored.
 
 ### How state is saved across sleep and wake up?
 

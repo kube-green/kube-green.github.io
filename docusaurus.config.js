@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const LOGO_IMAGE = 'img/logo.png';
+const LOGO_IMAGE = 'img/logo.svg';
 const GITHUB_BASE_URL = 'https://github.com/kube-green/kube-green.github.io/'
 const GITHUB_EDIT_BASE_URL = `${GITHUB_BASE_URL}edit/main/`
 
@@ -14,7 +14,7 @@ const config = {
   tagline: 'Make your Kubernetes clusters more green',
   url: 'https://kube-green.github.io',
   baseUrl: '/',
-  favicon: LOGO_IMAGE,
+  favicon: 'img/logo.png',
   trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -63,7 +63,7 @@ const config = {
         title: 'kube-green',
         logo: {
           alt: 'kube-green Logo',
-          src: 'img/logo.svg',
+          src: LOGO_IMAGE,
           srcDark: 'img/logo-dark.svg',
         },
         items: [

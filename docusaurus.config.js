@@ -86,6 +86,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: 'OO5LH8JODS',
+        apiKey: '14bdbb6df2e9dae96120ac4f1ec23a92',
+        indexName: 'kube-green',
+        contextualSearch: true
+      }
     }),
 };
 

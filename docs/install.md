@@ -14,7 +14,7 @@ To successfully install *kube-green*, in the cluster must be installed a **cert-
 
 ### Change default configuration
 
-You can change default configuration changing the config files.
+You can change default configuration editing the config files.
 
 For example, to deploy the controller in another namespace, change the file [kustomization.yaml](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml#L2) with the desired namespace name.
 

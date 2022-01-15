@@ -17,17 +17,16 @@ export const FeatureList: FeatureItem[] = [
     video: 'video/kube-green-explained-crop.mp4',
     description: (
       <>
-        Sleep your pods and wake up based on specific time.
-        This could bring your cluster to reduce the number of nodes.
+        Suspend your pods when no-one's using them, scale down your cluster and save energy
       </>
     ),
   },
   {
     title: 'Reduce CO2 emissions',
-    video: 'video/kube-green-animation-crop.mp4',
+    image: 'img/green-dashboard.png',
     description: (
       <>
-        Reduce the energy consumption of your cluster and stop cluster nodes.
+        See how much you save in the Green Dashboard (coming soon)
       </>
     ),
   },

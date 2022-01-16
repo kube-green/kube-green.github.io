@@ -12,7 +12,7 @@ const GITHUB_EDIT_BASE_URL = `${GITHUB_BASE_URL}edit/main/`
 const config = {
   title: 'kube-green',
   tagline: 'An operator to make your Kubernetes clusters more green',
-  url: 'https://kube-green.github.io',
+  url: 'https://kube-green.dev',
   baseUrl: '/',
   favicon: 'img/logo.png',
   trailingSlash: true,

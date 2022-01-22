@@ -11,7 +11,7 @@ const GITHUB_EDIT_BASE_URL = `${GITHUB_BASE_URL}edit/main/`
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'kube-green',
-  tagline: 'An operator to make your Kubernetes clusters more green',
+  tagline: 'An operator to reduce CO2 fingerprint of your clusters',
   url: 'https://kube-green.dev',
   baseUrl: '/',
   favicon: 'img/logo.png',

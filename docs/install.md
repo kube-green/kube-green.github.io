@@ -10,7 +10,25 @@ sidebar_position: 3
 
 To successfully install *kube-green*, in the cluster must be installed a **cert-manager**. If it is not already installed installed, [click here](https://cert-manager.io/docs/installation/).
 
-## Install with kustomize
+## kubectl apply
+
+With this method, you can not change the default configuration parameters.
+
+The default static configuration for the latest release can be installed with:
+
+```sh
+kubectl apply -f https://github.com/kube-green/kube-green/releases/latest/download/kube-green.yaml
+```
+
+If you want to install a specific release version, run:
+
+```sh
+kubectl apply -f https://github.com/kube-green/kube-green/releases/download/${RELEASE_TAG}/kube-green.yaml
+```
+
+with `${RELEASE_TAG}` correctly filled.
+
+## kustomize
 
 ### Change default configuration
 
@@ -27,6 +45,16 @@ make deploy
 ```
 
 This will create a new namespace, *kube-green*, which contains the pod of the operator.
+
+## Operator Lifecycle Manager (OLM)
+
+### Install from OperatorHub.io
+
+You can find *kube-green* in the [OperatorHub.io website](https://operatorhub.io/operator/kube-green). Click the Install button, and follow the instructions.
+
+### Install on OpenShift
+
+*kube-green* is in the [Red Hat-provided Operator catalogs](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-rh-catalogs.html) called community operators. On OpenShift 4 you can install *kube-green* from [OperatorHub](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-understanding-operatorhub.html). To install it, follow [this guide](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-adding-operators-to-cluster.html).
 
 ## Cloud compatibility
 

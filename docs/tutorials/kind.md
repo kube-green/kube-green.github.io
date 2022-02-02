@@ -42,8 +42,7 @@ kubectl -n cert-manager get pods
 
 ## Install kube-green
 
-To install *kube-green* clone the repo and checkout to the latest release tag.
-Install *kube-green* with default static install. [Click here](../install.md) to fid the different install methods supported.
+Install *kube-green* with default static install. [Click here](../install.md) to see the different install methods supported.
 
 Install *kube-green* with this command:
 

@@ -15,7 +15,6 @@ You can check it with the following command:
 kubectl get SleepInfo --all-namespaces
 ```
 
-
 ## kubectl
 
 :::caution

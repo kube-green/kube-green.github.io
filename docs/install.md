@@ -6,7 +6,9 @@ sidebar_position: 3
 
 ## Prerequisite
 
-*kube-green* support all cluster versions >= 1.19 <= 1.23.
+*kube-green* support all Kubernetes cluster versions >= 1.19 <= 1.23 and OpenShift Container Platform v4.
+
+Supported architectures are: amd64, arm64.
 
 To successfully install *kube-green*, in the cluster must be installed a **cert-manager**. If it is not already installed installed, [click here](https://cert-manager.io/docs/installation/).
 

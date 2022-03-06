@@ -69,3 +69,11 @@ So, to use the webhook component with a GKE private cluster, you need to configu
 *kube-green* uses webhook (exposed on port 9443) to check that SleepInfo CRD is valid. In order to make it works, you must open the 9443 port (or change the exposed port by configuration) otherwise it would not possible to add SleepInfo CRD.
 
 [Here](https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#add_firewall_rules) you can read more information about how to add firewall rules to GKE.
+
+### AWS EKS
+
+When using a custom CNI on EKS (such as cilium), the webhook cannot be reached by kube-green. This happens because the control plane cannot be configured to run on a custom CNI, so the CNIs differ between control plane and worker nodes.
+
+To address this, set `hostNetwork: true` in the deployment of the webhook to run it in the host network.
+
+If you use the kustomize config, you could uncomment the `# - host_network_patch.yaml` line to apply the patch with the `hostNetwork: true` value.

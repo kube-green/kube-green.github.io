@@ -76,4 +76,4 @@ When using a custom CNI on EKS (such as cilium), the webhook cannot be reached b
 
 To address this, set `hostNetwork: true` in the deployment of the webhook to run it in the host network.
 
-If you use the kustomize config, you could uncomment the `# - host_network_patch.yaml` line to apply the patch with the `hostNetwork: true` value.
+To set this, uncomment the `# - host_network_patch.yaml` line ([here](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml#L47)) to apply the patch with the `hostNetwork: true` value.

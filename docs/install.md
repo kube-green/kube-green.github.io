@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Prerequisite
 
-*kube-green* support all Kubernetes cluster versions >= 1.19 <= 1.23 and OpenShift Container Platform v4.
+*kube-green* support all Kubernetes cluster versions >= 1.19 <= 1.24 and OpenShift Container Platform v4.
 
 Supported architectures are: amd64, arm64.
 
@@ -78,4 +78,4 @@ When using a custom CNI on EKS (such as cilium), the webhook cannot be reached b
 
 To address this, set `hostNetwork: true` in the deployment of the webhook to run it in the host network.
 
-To set this, uncomment the `# - host_network_patch.yaml` line ([here](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml#L47)) to apply the patch with the `hostNetwork: true` value.
+To set this, uncomment the `# - host_network_patch.yaml` line ([in this file](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml)) to apply the patch with the `hostNetwork: true` value.

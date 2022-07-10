@@ -13,9 +13,9 @@ jobs:
         go_version: [1.17]
         node_version: ["lts/*"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use golang ${{ matrix.go_version }}
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go_version }}
       - name: Go version
@@ -23,7 +23,7 @@ jobs:
       - name: generate api reference
         run: ./scripts/api-reference/reference-docs-gen-config.sh
       - name: Use node ${{ matrix.node_version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
           cache: npm

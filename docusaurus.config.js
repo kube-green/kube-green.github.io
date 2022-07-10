@@ -51,10 +51,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'kubernetes, green-software, autoscaling, downscale, cloud-native'}],
       colorMode: {
         respectPrefersColorScheme: true,
       },
-      image: LOGO_IMAGE,
+      image: 'img/kube-green-cover.png',
       announcementBar: {
         id: 'support-us',
         content: 'If you like kube-green, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/kube-green/kube-green">GitHub</a> ⭐',

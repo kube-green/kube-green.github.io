@@ -6,6 +6,7 @@
   // words - list of words to be always considered correct
   "words": [
     "cncf",
+    "Davide",
     "davidebianchi",
     "de",
     "facto",
@@ -15,6 +16,8 @@
     "kubernetes",
     "kustomization",
     "kustomize",
+    "Mia-Platform",
+    "Michel",
     "paolomartinoli",
     "sleepme",
     "wmms2",

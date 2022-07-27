@@ -5,13 +5,17 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
+    "cncf",
     "davidebianchi",
+    "de",
+    "facto",
     "goclimate",
     "kube",
     "kubectl",
     "kubernetes",
     "kustomization",
     "kustomize",
+    "paolomartinoli",
     "sleepme",
     "wmms2",
     "hbjv",

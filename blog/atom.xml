@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kube-green.dev/blog"/>
     <subtitle>kube-green Blog</subtitle>
-    <icon>https://kube-green.dev/img/logo.png</icon>
+    <icon>https://kube-green.dev/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Intro to kube-green]]></title>
         <id>welcome-blog-post</id>

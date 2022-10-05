@@ -4,7 +4,7 @@
   <ShortName>kube-green</ShortName>
   <Description>Search kube-green</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://kube-green.dev/img/logo.png</Image>
+  <Image width="16" height="16" type="image/x-icon">https://kube-green.dev/img/favicon.png</Image>
   <Url type="text/html" method="get" template="https://kube-green.dev/search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://kube-green.dev/opensearch.xml" />
   <moz:SearchForm>https://kube-green.dev/</moz:SearchForm>

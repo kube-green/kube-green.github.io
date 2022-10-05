@@ -14,7 +14,7 @@ const config = {
   tagline: 'An operator to reduce CO2 footprint of your clusters',
   url: 'https://kube-green.dev',
   baseUrl: '/',
-  favicon: 'img/logo.png',
+  favicon: 'img/favicon.png',
   trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',

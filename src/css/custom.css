@@ -4,16 +4,23 @@
  * work well for content-centric websites.
  */
 
+@font-face {
+  font-family: "Inter";
+  src: url('/static/font/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2') format('woff');
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-code-font-size: 95%;
-  --ifm-color-primary: #53dd6c;
-  --ifm-color-primary-dark: #3ad856;
-  --ifm-color-primary-darker: #2dd54b;
-  --ifm-color-primary-darkest: #23b23d;
-  --ifm-color-primary-light: #6ce282;
-  --ifm-color-primary-lighter: #79e58d;
-  --ifm-color-primary-lightest: #9fecad;
+  --ifm-color-primary: #00C062;
+  --ifm-color-primary-dark: #00AD55;
+  --ifm-color-primary-darker: #009B48;
+  --ifm-color-primary-darkest: #007A32;
+  --ifm-color-primary-light: #00C062;
+  --ifm-color-primary-lighter: #00D16E;
+  --ifm-color-primary-lightest: #00DB83;
+  --ifm-font-family-monospace: "Inter";
+  --ifm-font-family-base: "Inter"
 }
 
 .docusaurus-highlight-code-line {

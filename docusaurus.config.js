@@ -55,7 +55,7 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true,
       },
-      image: 'img/kube-green-cover.png',
+      image: 'img/og-cover.png',
       announcementBar: {
         id: 'support-us',
         content: 'If you like kube-green, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/kube-green/kube-green">GitHub</a> ⭐',

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[1983],{6948:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/rebranding","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

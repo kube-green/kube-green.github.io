@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kube-green.dev/blog</id>
     <title>kube-green Blog</title>
-    <updated>2022-10-05T00:00:00.000Z</updated>
+    <updated>2022-10-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kube-green.dev/blog"/>
     <subtitle>kube-green Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Announcing kube-green rebranding]]></title>
         <id>kube-green-rebranding</id>
         <link href="https://kube-green.dev/blog/kube-green-rebranding"/>
-        <updated>2022-10-05T00:00:00.000Z</updated>
+        <updated>2022-10-07T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[If you have been one of the early adopters of kube-green you may have noticed something different in these days. New colors, new shapes, and a brand new logo? What it's all about?]]></summary>
         <content type="html"><![CDATA[<p>If you have been one of the early adopters of <em>kube-green</em> you may have noticed something different in these days. New colors, new shapes, and a brand new logo? What it's all about?
 You may also be wondering if you are on the right repository, and if this is the same <em>kube-green</em> you are familiar with: don't worry, it is!

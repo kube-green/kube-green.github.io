@@ -4,7 +4,7 @@
         <title>kube-green Blog</title>
         <link>https://kube-green.dev/blog</link>
         <description>kube-green Blog</description>
-        <lastBuildDate>Wed, 05 Oct 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Oct 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Announcing kube-green rebranding]]></title>
             <link>https://kube-green.dev/blog/kube-green-rebranding</link>
             <guid>kube-green-rebranding</guid>
-            <pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[If you have been one of the early adopters of kube-green you may have noticed something different in these days. New colors, new shapes, and a brand new logo? What it's all about?]]></description>
             <content:encoded><![CDATA[<p>If you have been one of the early adopters of <em>kube-green</em> you may have noticed something different in these days. New colors, new shapes, and a brand new logo? What it's all about?
 You may also be wondering if you are on the right repository, and if this is the same <em>kube-green</em> you are familiar with: don't worry, it is!

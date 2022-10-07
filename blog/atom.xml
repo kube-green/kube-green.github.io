@@ -8,7 +8,7 @@
     <subtitle>kube-green Blog</subtitle>
     <icon>https://kube-green.dev/img/favicon.png</icon>
     <entry>
-        <title type="html"><![CDATA[announcing-kube-green-rebranding]]></title>
+        <title type="html"><![CDATA[Announcing kube-green rebranding]]></title>
         <id>kube-green-rebranding</id>
         <link href="https://kube-green.dev/blog/kube-green-rebranding"/>
         <updated>2022-10-05T00:00:00.000Z</updated>

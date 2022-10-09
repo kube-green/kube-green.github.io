@@ -47,7 +47,7 @@ export default function ConsumptionCalculator() {
             value={numberOfPodsTotal}
           />
           <CalcInput
-            label="Pods sleeped"
+            label="Total pods when kube-green active"
             onInputChange={setNumberOfSleepedPods}
             value={numberOfPodsSleeped}
           />

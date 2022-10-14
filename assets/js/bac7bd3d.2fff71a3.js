@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[2438],{3437:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/kube-green","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

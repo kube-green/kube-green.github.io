@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Announcing kube-green rebranding","permalink":"/blog/kube-green-rebranding"},{"title":"Intro to kube-green","permalink":"/blog/welcome-blog-post"}]}')}}]);

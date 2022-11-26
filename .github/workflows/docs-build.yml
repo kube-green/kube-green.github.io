@@ -33,6 +33,8 @@ jobs:
         run: npm run lint
       - name: check spell
         run: npm run spellcheck
+      - name: create adopters
+        run: node ./scripts/adopters/adopters-to-table.js
       - name: Build website
         run: npm run build
       - name: Cache build

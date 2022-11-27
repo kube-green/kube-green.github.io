@@ -1,0 +1,3 @@
+- organization: Mia-Platform
+  description: Added kube-green to all no-prod environments that are turned off all nights and weekend. A lot of them are turned of till are not necessary. This is saving us more than 30% of resources!
+  website: https://mia-platform.eu

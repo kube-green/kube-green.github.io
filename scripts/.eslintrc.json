@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "overrides": [
+    {
+        "files": ["*.js"],
+        "extends": ["eslint:recommended"],
+        "env": {
+          "node": true
+        },
+        "parserOptions": {
+          "ecmaVersion": 2022,
+          "sourceType": "script"
+        }
+    }
+  ]
+}

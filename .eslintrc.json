@@ -23,7 +23,8 @@
     ],
     "ignorePatterns": [
         "*.css",
-        "docusaurus.config.js"
+        "docusaurus.config.js",
+        "scripts"
     ],
     "settings": {
         "import/resolver": {

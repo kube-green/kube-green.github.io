@@ -8,7 +8,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Add your organization to ADOPTERS
 
-Have you started using *kube-green*? Add your organization to [adopters.yaml file](https://github.com/kube-green/kube-green.github.io/blob/main/adopters.yaml). You can do it adding your organization information as in example:
+Have you started using *kube-green*? Add your organization to [adopters.yaml file](https://github.com/kube-green/kube-green.github.io/blob/main/adopters.yaml), creating a pull request on this repository. You can do it adding your organization information as in example:
 
 ```yaml
 - organization: My Organization Name

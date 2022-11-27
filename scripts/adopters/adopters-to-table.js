@@ -8,7 +8,8 @@ function getAdoptersTable() {
   const adopters = yaml.load(fs.readFileSync(path.join(process.cwd(), 'adopters.yaml'), 'utf-8'));
   return adopters.map((adopter) => {
     const { organization, website, description } = adopter;
-    return `|[${organization}](${website})|${description}|`;
+    const organizationField = website ? `[${organization}](${website})` : organization
+    return `|${organizationField}|${description}|`;
   }).join('\n');
 }
 

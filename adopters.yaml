@@ -4,3 +4,6 @@
 - organization: Step4Business
   description: We use KubeGreen to stop all non production environments on Saturdays, Sundays and nights so that we can save more than 30% of costs and help developers to improve their work life balance
   website: https://www.step4business.com/
+- organization: Qonto
+  description: We use KubeGreen to stop all dev environments outside business hours (~10k pods on 3 clusters). This allowed us to save 40% of our AWS monthly bill.
+  website: https://qonto.com

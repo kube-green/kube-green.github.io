@@ -15,10 +15,13 @@ The SleepInfo spec contains:
 * **timeZone** (*optional*, default to *UTC*): time zone in IANA specification. For example for italian hour, set `Europe/Rome`.
 * **suspendDeployments** (*optional*, default to *true*): if set to false, deployments will not be suspended.
 * **suspendCronJobs** (*optional*, default to *false*): if set to true, cronjobs will be suspended.
-* **excludeRef** (*optional*): an array of object containing the resource to exclude from sleep. It contains:
+* **excludeRef** (*optional*): an array of object containing the resource to exclude from sleep. It can specify exaclty the name of the speficied resource or match based from the labels. The possible formats are:
   * **apiVersion**: version of the resource. Now it is supported *"apps/v1"*, *"batch/v1beta1"* and *"batch/v1"*
   * **kind**: the kind of resource. Now it is supported *"Deployment"* and *"CronJob"*
   * **name**: the name of the resource
+or
+  * **matchLabels**: an object of strings with the labels to identify a resources
+click [here](#exclude-reference) to see an example.
 
 ## Examples
 
@@ -98,4 +101,26 @@ spec:
       name:       do-not-suspend
 ```
 
-With this CRD, it's configured a sleep to 20:00 and wake up to 08:00 on weekdays, only for CronJobs (sleep of Deployments are failed), excluding the CronJob `do-not-suspend`.
+With this CRD, it's configured a sleep to 20:00 and wake up to 08:00 on weekdays, only for CronJobs (sleep of Deployments are inactive), excluding the CronJob `do-not-suspend`.
+
+### Exclude reference
+
+```yaml
+apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: working-hours
+spec:
+  weekdays: "*"
+  sleepAt: "20:00"
+  wakeUpAt: "08:00"
+  suspendCronJobs: true
+  excludeRef:
+    - apiVersion: "batch/v1"
+      kind:       CronJob
+      name:       do-not-suspend
+    - matchLabels: 
+        kube-green.dev/exclude: true
+```
+
+With this CRD, it's configured a sleep to 20:00 and wake up to 08:00 on weekdays, excluding the CronJob `do-not-suspend` and all the supported resources with the label `kube-green.dev/exclude: true`.

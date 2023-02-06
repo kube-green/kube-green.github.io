@@ -15,7 +15,7 @@ The SleepInfo spec contains:
 * **timeZone** (*optional*, default to *UTC*): time zone in IANA specification. For example for italian hour, set `Europe/Rome`.
 * **suspendDeployments** (*optional*, default to *true*): if set to false, deployments will not be suspended.
 * **suspendCronJobs** (*optional*, default to *false*): if set to true, cronjobs will be suspended.
-* **excludeRef** (*optional*): an array of object containing the resource to exclude from sleep. It can specify exaclty the name of the speficied resource or match based from the labels. The possible formats are:
+* **excludeRef** (*optional*): an array of object containing the resource to exclude from sleep. It can specify exactly the name of the specified resource or match based from the labels. The possible formats are:
   * **apiVersion**: version of the resource. Now it is supported *"apps/v1"*, *"batch/v1beta1"* and *"batch/v1"*
   * **kind**: the kind of resource. Now it is supported *"Deployment"* and *"CronJob"*
   * **name**: the name of the resource

@@ -45,7 +45,7 @@ After *kube-green*, it is possible to see the memory lines with 5 peak in the wo
 
 It is possible to see the same as for memory also for the CPU in the following image.  
 
-![Memory usage](/img/usecase/23.7-23-8-memory.png)
+![Memory usage](/img/usecase/23.7-23-8-CPU.png)
 
 ### Numeric summary
 

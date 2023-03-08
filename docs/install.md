@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Prerequisite
 
-*kube-green* support all Kubernetes cluster versions >= 1.19 <= 1.24 and OpenShift Container Platform v4.
+*kube-green* support all Kubernetes cluster versions >= 1.19 <= 1.26 and OpenShift Container Platform v4.
 
 Supported architectures are: amd64, arm64.
 

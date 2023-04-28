@@ -7,3 +7,6 @@
 - organization: Qonto
   description: We use KubeGreen to stop all dev environments outside business hours (~10k pods on 3 clusters). This allowed us to save 40% of our AWS monthly bill.
   website: https://qonto.com
+- organization: Sopra Steria
+  description: We enable KubeGreen by default of our 3 mutualized platforms (based on Openshift) to stop all dev & tests workloads during the night and the weekends.
+  website: https://soprasteria.com

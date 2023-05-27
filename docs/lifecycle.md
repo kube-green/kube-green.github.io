@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # How it works
 
-The use of this operator is very simple. Once installed on the cluster, configure the desired CRD to make it works.  
+The use of `kube-green` is very simple. Once installed on the cluster, configure the desired CRD to make it works.  
 The CRD used by `kube-green` is called **SleepInfo**. In this configuration, it is possible to configure the sleep and wake up time for the namespace.
 
 An example of configuration is:

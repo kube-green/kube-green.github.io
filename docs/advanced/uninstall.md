@@ -39,7 +39,7 @@ The uninstall commands below will delete all *kube-green* CRD in the cluster.
 If you run undeploy command, the namespace of *kube-green* (by default `kube-green`), will be deleted.
 :::
 
-To uninstall the operator from the cluster, change working directory to the root of *kube-green* repository, and run:
+To uninstall kube-green from the cluster, change working directory to the root of *kube-green* repository, and run:
 
 ```bash
 make undeploy
@@ -47,4 +47,4 @@ make undeploy
 
 ## Operator Lifecycle Manager (OLM)
 
-To uninstall the operator from the cluster, follow [this guide](https://olm.operatorframework.io/docs/tasks/uninstall-operator/).
+To uninstall kube-green from the cluster, follow [this guide](https://olm.operatorframework.io/docs/tasks/uninstall-operator/).

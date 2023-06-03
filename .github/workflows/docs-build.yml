@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go_version: [1.19]
+        go_version: ['1.19']
         node_version: ["lts/*"]
     steps:
       - uses: actions/checkout@v3

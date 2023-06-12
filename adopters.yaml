@@ -10,3 +10,6 @@
 - organization: Sopra Steria
   description: We enable KubeGreen by default of our 3 mutualized platforms (based on Openshift) to stop all dev & tests workloads during the night and the weekends.
   website: https://soprasteria.com
+- organization: Radicalbit
+  description: We use KubeGreen to stop every non production environment on nights and weekends. This allowed us to save more than 20% on our GCP monthly bill, and we also feel we're doing good for our beloved planet by decrementing our CO2 emissions :-)
+  website: https://radicalbit.io/

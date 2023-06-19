@@ -13,3 +13,6 @@
 - organization: Radicalbit
   description: We use KubeGreen to stop every non production environment on nights and weekends. This allowed us to save more than 20% on our GCP monthly bill, and we also feel we're doing good for our beloved planet by decrementing our CO2 emissions :-)
   website: https://radicalbit.io/
+- organization: Supertext
+  description: With kube-green, we not only save a lot of money, but we also have a smaller footprint on our planet. We switch off non-productive nodes over night and over the weekend. The only missing piece, is to wake them up by the press of a button. But working on that.
+  website: https://www.supertext.com/en/company/platform

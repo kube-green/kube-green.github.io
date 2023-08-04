@@ -16,3 +16,6 @@
 - organization: Supertext
   description: With kube-green, we not only save a lot of money, but we also have a smaller footprint on our planet. We switch off non-productive nodes over night and over the weekend. The only missing piece, is to wake them up by the press of a button. But working on that.
   website: https://www.supertext.com/en/company/platform
+- organization: Davidson Consulting
+  description: We have installed the kube-green operator on our OKD pre-production cluster in order to automatically scale-down the workloads in non-business hours. And, this helps a lot in reducing the resource consumption.
+  website: https://www.davidson.group

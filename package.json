@@ -19,7 +19,7 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
-    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/react": "^3.0.0",
     "@svgr/webpack": "^6.5.1",
     "clsx": "^1.2.1",
     "decimal.js-light": "^2.5.1",

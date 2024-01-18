@@ -38,7 +38,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Cache build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: build
           key: build-website-${{ github.sha }}-${{ github.run_id }}

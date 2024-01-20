@@ -57,12 +57,12 @@ In this table, a comparison between before and after the use of *kube-green*.
 
 |                       | Total  | With kube-green  | Difference       |
 | --------------------- | ------ | ---------------- | ---------------- |
-| Number of pods        | 1050   | 450              | -600             |
-| Memory consumed [Gb]  | 54     | 21               | -33              |
-| CPU consumed    [cpu] | 4.5    | 1                | -3.5             |
-| Memory allocated [Gb] | 75     | 30               | -45              |
-| CPU allocated [cpu]   | 40     | 15               | -25              |
-| CO2eq/week [kg]       | 222    | 139              | **-83**          |
+| Number of pods        | 1050   | 450              | 600             |
+| Memory consumed [Gb]  | 54     | 21               | 33              |
+| CPU consumed    [cpu] | 4.5    | 1                | 3.5             |
+| Memory allocated [Gb] | 75     | 30               | 45              |
+| CPU allocated [cpu]   | 40     | 15               | 25              |
+| CO2eq/week [kg]       | 222    | 139              | **83**          |
 
 As show in the table, are saved 83 Kg of CO2eq per week for this cluster. So in a year (52 weeks), the CO2eq saved is **-4316** Kg CO2eq.
 

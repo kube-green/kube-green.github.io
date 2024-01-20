@@ -9,16 +9,24 @@ An example of CRD is accessible [at this link](https://github.com/kube-green/kub
 
 The SleepInfo spec contains:
 
-* **weekdays**: day of the week. `*` is every day, `1` is monday, `1-5` is from monday to friday
-* **sleepAt**: time in hours and minutes (HH:mm) when namespace will go to sleep. Valid values are, for example, 19:00or `*:*` for every minute and every hour. Resources sleep will be deployments (setting replicas value to 0) and, if `suspendCronjobs` option is set to true, cron jobs will be suspended.
-* **wakeUpAt** (*optional*): time in hours and minutes (HH:mm) when namespace should be restored to the initial state (before sleep). Valid values are, for example, 19:00or `*:*` for every minute and every hour. If wake up value is not set, pod in namespace will not be restored. So, you will need to deploy the initial namespace configuration to restore it.
-* **timeZone** (*optional*, default to *UTC*): time zone in IANA specification. For example for italian hour, set `Europe/Rome`.
-* **suspendDeployments** (*optional*, default to *true*): if set to false, deployments will not be suspended.
-* **suspendCronJobs** (*optional*, default to *false*): if set to true, cronjobs will be suspended.
-* **excludeRef** (*optional*): an array of object containing the resource to exclude from sleep. It can specify exactly the name of the specified resource or match based from the labels. The possible formats are:
-  * **apiVersion**: version of the resource. Now it is supported *"apps/v1"*, *"batch/v1beta1"* and *"batch/v1"*
-  * **kind**: the kind of resource. Now it is supported *"Deployment"* and *"CronJob"*
-  * **name**: the name of the resource
+* **weekdays**  
+Day of the week. `*` is every day, `1` is monday, `1-5` is from monday to friday
+* **sleepAt**  
+Time in hours and minutes (HH:mm) when namespace will go to sleep. Valid values are, for example, `19:00` or `*:*` for every minute and every hour.  
+Resources sleep will be deployments (setting replicas value to 0) and, if `suspendCronjobs` option is set to true, cron jobs will be suspended.
+* **wakeUpAt** (*optional*)  
+Time in hours and minutes (HH:mm) when namespace should be restored to the initial state (before sleep). Valid values are, for example, `19:00` or `*:*` for every minute and every hour. If wake up value is not set, pod in namespace will not be restored. So, you will need to deploy the initial namespace configuration to restore it.
+* **timeZone** (*optional*, default to *UTC*)  
+Time zone in IANA specification. For example for italian hour, set `Europe/Rome`.
+* **suspendDeployments** (*optional*, default to *true*)  
+If set to false, deployments will not be suspended during sleep mode..
+* **suspendCronJobs** (*optional*, default to *false*)  
+If set to true, cronjobs will be suspended during sleep mode..
+* **excludeRef** (*optional*)  
+An array of object containing the resource to exclude from sleep. It can specify exactly the name of the specified resource or match based from the labels. The possible formats are:
+  * **apiVersion**: Version of the resource. Now it is supported *"apps/v1"*, *"batch/v1beta1"* and *"batch/v1"*
+  * **kind**: The kind of resource. Now it is supported *"Deployment"* and *"CronJob"*
+  * **name**: The name of the resource
 or
   * **matchLabels**: an object of strings with the labels to identify a resources
 click [here](#exclude-reference) to see an example.

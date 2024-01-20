@@ -1,51 +1,50 @@
-import React from "react";
-import Decimal from "decimal.js-light";
+import React from 'react';
+import Decimal from 'decimal.js-light';
 
-import clsx from "clsx";
-import styles from "./ConsumptionCalculator.module.css";
+import clsx from 'clsx';
+import styles from './ConsumptionCalculator.module.css';
 
 export default function ConsumptionCalculator() {
   const [co2PerPod, setCO2PerPod] = React.useState(new Decimal(11));
   const [numberOfPodsTotal, setNumberOfPods] = React.useState(new Decimal(100));
   const [numberOfPodsSleeped, setNumberOfSleepedPods] = React.useState(
-    new Decimal(100)
+    new Decimal(100),
   );
   const [numberOfHourSleepInWeek, setNumberOfHourSleepInWeek] = React.useState(
-    new Decimal(128)
+    new Decimal(128),
   );
 
   const resultWithKubeGreen = React.useMemo(
-    () =>
-      calculateCO2WeekConsumption(
-        co2PerPod,
-        numberOfPodsTotal,
-        numberOfPodsSleeped,
-        numberOfHourSleepInWeek
-      ),
-    [co2PerPod, numberOfPodsTotal, numberOfPodsSleeped, numberOfHourSleepInWeek]
+    () => calculateCO2WeekConsumption(
+      co2PerPod,
+      numberOfPodsTotal,
+      numberOfPodsSleeped,
+      numberOfHourSleepInWeek,
+    ),
+    [co2PerPod, numberOfPodsTotal, numberOfPodsSleeped, numberOfHourSleepInWeek],
   );
   const resultWithoutKubeGreen = React.useMemo(
-    () =>
-      calculateCO2WeekConsumption(
-        co2PerPod,
-        numberOfPodsTotal,
-        numberOfPodsSleeped,
-        new Decimal(0)
-      ),
-    [co2PerPod, numberOfPodsTotal, numberOfPodsSleeped]
+    () => calculateCO2WeekConsumption(
+      co2PerPod,
+      numberOfPodsTotal,
+      numberOfPodsSleeped,
+      new Decimal(0),
+    ),
+    [co2PerPod, numberOfPodsTotal, numberOfPodsSleeped],
   );
   const percentCO2Saved = React.useMemo(
-    () =>
-      Math.round(
-        (Math.abs(resultWithoutKubeGreen - resultWithKubeGreen) /
-          resultWithoutKubeGreen) *
-          1000
-      ) / 10,
-    [resultWithoutKubeGreen, resultWithKubeGreen]
+    () => new Decimal(resultWithKubeGreen)
+      .minus(resultWithoutKubeGreen)
+      .dividedBy(resultWithoutKubeGreen)
+      .mul(100)
+      .toDecimalPlaces(1)
+      .abs()
+      .toString(),
+    [resultWithoutKubeGreen, resultWithKubeGreen],
   );
 
   return (
-    <div className={clsx(styles.card, "card")}>
+    <div className={clsx(styles.card, 'card')}>
       <div className="card__header">
         <h2>CO2 Calculator</h2>
       </div>
@@ -77,12 +76,25 @@ export default function ConsumptionCalculator() {
           <div className={styles.subTitle}>Total (Kg CO2eq/week)</div>
         </h3>
         <div>
-          <b>{percentCO2Saved}% CO2 saved</b> with kube-green
+          <b>
+            {percentCO2Saved}
+            % CO2 saved
+          </b>
+          {' '}
+          with kube-green
         </div>
         <div>
-          <div>without kube-green: {resultWithoutKubeGreen.toString()}</div>
           <div>
-            <b>with kube-green: {resultWithKubeGreen.toString()}</b>
+            without kube-green:
+            {' '}
+            {resultWithoutKubeGreen.toString()}
+          </div>
+          <div>
+            <b>
+              with kube-green:
+              {' '}
+              {resultWithKubeGreen.toString()}
+            </b>
           </div>
         </div>
       </div>
@@ -95,7 +107,7 @@ function calculateCO2WeekConsumption(
   co2PerPod: Decimal,
   totalNumberOfPods: Decimal,
   numberOfPodsSleeped: Decimal,
-  sleepHour: Decimal
+  sleepHour: Decimal,
 ): Decimal {
   const co2PerDayPerPod = co2PerPod.dividedBy(365).dividedBy(24);
   const co2WithKubeGreen = co2PerDayPerPod

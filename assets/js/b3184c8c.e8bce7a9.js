@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[3514],{9778:e=>{e.exports=JSON.parse('{"label":"rebranding","permalink":"/blog/tags/rebranding","allTagsPath":"/blog/tags","count":1}')}}]);

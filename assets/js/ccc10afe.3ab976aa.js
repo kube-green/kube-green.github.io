@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[3966],{502:e=>{e.exports=JSON.parse('{"label":"kube-green","permalink":"/blog/tags/kube-green","allTagsPath":"/blog/tags","count":3}')}}]);

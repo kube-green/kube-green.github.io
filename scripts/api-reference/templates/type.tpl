@@ -2,7 +2,7 @@
 
 <h3 id="{{ anchorIDForType . }}">
     {{- .Name.Name }}
-    {{ if eq .Kind "Alias" }}(<code>{{.Underlying}}</code> alias)</p>{{ end -}}
+    {{- if eq .Kind "Alias" }}(<code>{{.Underlying}}</code> alias)</p>{{ end -}}
 </h3>
 {{ with (typeReferences .) }}
     <p>
@@ -35,7 +35,8 @@
         <tr>
             <td>
                 <code>apiVersion</code><br></br>
-                string</td>
+                string
+            </td>
             <td>
                 <code>
                     {{apiGroup .}}

@@ -38,6 +38,10 @@ You can change default configuration editing the config files.
 
 For example, to deploy the controller in another namespace, change the file [kustomization.yaml](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml#L2) with the desired namespace name.
 
+#### RBAC
+
+At the moment, kube-green is released with a ClusterRole that allows to manage all resources in all namespaces. If you want to restrict the access to specific resources, you can change the ClusterRole in the file [role.yaml](https://github.com/kube-green/kube-green/blob/main/config/rbac/role.yaml) accordingly.
+
 ### Deploy
 
 To install *kube-green* in the cluster, clone the repository and run

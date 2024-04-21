@@ -17,9 +17,10 @@ updates:
         - "major"
         - "minor"
         - "patch"
-      typescript-eslint:
+      eslint:
         patterns:
         - "@typescript-eslint/*"
+        - "eslint*"
         update-types:
         - "major"
         - "minor"

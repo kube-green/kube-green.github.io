@@ -17,7 +17,7 @@ updates:
         - "major"
         - "minor"
         - "patch"
-      docusaurus:
+      typescript-eslint:
         patterns:
         - "@typescript-eslint/*"
         update-types:

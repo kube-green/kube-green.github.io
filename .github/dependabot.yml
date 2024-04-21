@@ -12,7 +12,14 @@ updates:
     groups:
       docusaurus:
         patterns:
-        - "@docusaurus*"
+        - "@docusaurus/*"
+        update-types:
+        - "major"
+        - "minor"
+        - "patch"
+      docusaurus:
+        patterns:
+        - "@typescript-eslint/*"
         update-types:
         - "major"
         - "minor"

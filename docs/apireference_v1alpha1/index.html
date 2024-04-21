@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="kube-green" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.10438a18.css">
-<script src="/assets/js/runtime~main.c37d9c23.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.70f71e12.js" defer="defer"></script>
 <script src="/assets/js/main.bca281b6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@ For example, <em>:</em>/2 is set to configure a run every even minute.</p></td><
 For example, <em>:</em>/2 is set to configure a run every even minute.
 It is not required.</p></td></tr><tr><td><code>timeZone</code><br><em><p>string</p></em></td><td><em>(Optional)</em><p>Time zone to set the schedule, in IANA time zone identifier.
 It is not required, default to UTC.
-For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code>excludeRef</code><br><em><a href="#kube-green.com/v1alpha1.ExcludeRef"><p>[]ExcludeRef</p></a></em></td><td><em>(Optional)</em><p>ExcludeRef define the resource to exclude from the sleep.</p></td></tr><tr><td><code>suspendCronJobs</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendCronjobs is set to true, on sleep the cronjobs of the namespace will be suspended.</p></td></tr><tr><td><code>suspendDeployments</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendDeployments is set to false, on sleep the deployment of the namespace will not be suspended. By default Deployment will be suspended.</p></td></tr></table></td></tr><tr><td><code>status</code><br><em><a href="#kube-green.com/v1alpha1.SleepInfoStatus"><p>SleepInfoStatus</p></a></em></td><td></td></tr></tbody></table>
+For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code>excludeRef</code><br><em><a href="#kube-green.com/v1alpha1.ExcludeRef"><p>[]ExcludeRef</p></a></em></td><td><em>(Optional)</em><p>ExcludeRef define the resource to exclude from the sleep.</p></td></tr><tr><td><code>suspendCronJobs</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendCronjobs is set to true, on sleep the cronjobs of the namespace will be suspended.</p></td></tr><tr><td><code>suspendDeployments</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendDeployments is set to false, on sleep the deployment of the namespace will not be suspended. By default Deployment will be suspended.</p></td></tr><tr><td><code>patches</code><br><em><a href="#kube-green.com/v1alpha1.Patch"><p>[]Patch</p></a></em></td><td><em>(Optional)</em><p>Patches is a list of json 6902 patches to apply to the target resources.</p></td></tr></table></td></tr><tr><td><code>status</code><br><em><a href="#kube-green.com/v1alpha1.SleepInfoStatus"><p>SleepInfoStatus</p></a></em></td><td></td></tr></tbody></table>
 <h3 id="kube-green.com/v1alpha1.ExcludeRef">ExcludeRef</h3>
 <p></p><p>(<em>Appears on: </em>
 <a href="#kube-green.com/v1alpha1.SleepInfoSpec">SleepInfoSpec</a>)</p><p></p>
@@ -37,6 +37,16 @@ For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code
 <table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>apiVersion</code><br><em><p>string</p></em></td><td><p>ApiVersion of the kubernetes resources.
 Supported api version is “apps/v1”.</p></td></tr><tr><td><code>kind</code><br><em><p>string</p></em></td><td><p>Kind of the kubernetes resources of the specific version.
 Supported kind are “Deployment” and “CronJob”.</p></td></tr><tr><td><code>name</code><br><em><p>string</p></em></td><td><em>(Optional)</em><p>Name which identify the kubernetes resource.</p></td></tr><tr><td><code>matchLabels</code><br><em><p>map[string]string</p></em></td><td><em>(Optional)</em><p>MatchLabels which identify the kubernetes resource by labels</p></td></tr></tbody></table>
+<h3 id="kube-green.com/v1alpha1.Patch">Patch</h3>
+<p></p><p>(<em>Appears on: </em>
+<a href="#kube-green.com/v1alpha1.SleepInfoSpec">SleepInfoSpec</a>)</p><p></p>
+<p></p>
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>target</code><br><em><a href="#kube-green.com/v1alpha1.PatchTarget"><p>PatchTarget</p></a></em></td><td><p>Target is the target resource to patch.</p></td></tr><tr><td><code>patch</code><br><em><p>string</p></em></td><td><p>Patch is the json6902 patch to apply to the target resource.</p></td></tr></tbody></table>
+<h3 id="kube-green.com/v1alpha1.PatchTarget">PatchTarget</h3>
+<p></p><p>(<em>Appears on: </em>
+<a href="#kube-green.com/v1alpha1.Patch">Patch</a>)</p><p></p>
+<p></p>
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>group</code><br><em><p>string</p></em></td><td><p>Group of the Kubernetes resources.</p></td></tr><tr><td><code>kind</code><br><em><p>string</p></em></td><td><p>Kind of the Kubernetes resources.</p></td></tr></tbody></table>
 <h3 id="kube-green.com/v1alpha1.SleepInfoSpec">SleepInfoSpec</h3>
 <p></p><p>(<em>Appears on: </em>
 <a href="#kube-green.com/v1alpha1.SleepInfo">SleepInfo</a>)</p><p></p>
@@ -46,7 +56,7 @@ For example, <em>:</em>/2 is set to configure a run every even minute.</p></td><
 For example, <em>:</em>/2 is set to configure a run every even minute.
 It is not required.</p></td></tr><tr><td><code>timeZone</code><br><em><p>string</p></em></td><td><em>(Optional)</em><p>Time zone to set the schedule, in IANA time zone identifier.
 It is not required, default to UTC.
-For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code>excludeRef</code><br><em><a href="#kube-green.com/v1alpha1.ExcludeRef"><p>[]ExcludeRef</p></a></em></td><td><em>(Optional)</em><p>ExcludeRef define the resource to exclude from the sleep.</p></td></tr><tr><td><code>suspendCronJobs</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendCronjobs is set to true, on sleep the cronjobs of the namespace will be suspended.</p></td></tr><tr><td><code>suspendDeployments</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendDeployments is set to false, on sleep the deployment of the namespace will not be suspended. By default Deployment will be suspended.</p></td></tr></tbody></table>
+For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code>excludeRef</code><br><em><a href="#kube-green.com/v1alpha1.ExcludeRef"><p>[]ExcludeRef</p></a></em></td><td><em>(Optional)</em><p>ExcludeRef define the resource to exclude from the sleep.</p></td></tr><tr><td><code>suspendCronJobs</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendCronjobs is set to true, on sleep the cronjobs of the namespace will be suspended.</p></td></tr><tr><td><code>suspendDeployments</code><br><em><p>bool</p></em></td><td><em>(Optional)</em><p>If SuspendDeployments is set to false, on sleep the deployment of the namespace will not be suspended. By default Deployment will be suspended.</p></td></tr><tr><td><code>patches</code><br><em><a href="#kube-green.com/v1alpha1.Patch"><p>[]Patch</p></a></em></td><td><em>(Optional)</em><p>Patches is a list of json 6902 patches to apply to the target resources.</p></td></tr></tbody></table>
 <h3 id="kube-green.com/v1alpha1.SleepInfoStatus">SleepInfoStatus</h3>
 <p></p><p>(<em>Appears on: </em>
 <a href="#kube-green.com/v1alpha1.SleepInfo">SleepInfo</a>)</p><p></p>
@@ -55,6 +65,6 @@ For example, for the Italy time zone set Europe/Rome.</p></td></tr><tr><td><code
 possibilities</p></td></tr></tbody></table>
 <hr>
 <p><em><p>Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>94e174c</code>.</p></em></p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/advanced/uninstall/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Uninstall</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/FAQ/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FAQ</div></a></nav></div></div></div></div></main></div></div></div></div>
+on git commit <code>7f97bc8</code>.</p></em></p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/advanced/uninstall/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Uninstall</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/FAQ/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FAQ</div></a></nav></div></div></div></div></main></div></div></div></div>
 </body>
 </html>

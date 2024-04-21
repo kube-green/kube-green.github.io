@@ -9,6 +9,14 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      docusaurus:
+        patterns:
+        - "@docusaurus*"
+        update-types:
+        - "major"
+        - "minor"
+        - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"

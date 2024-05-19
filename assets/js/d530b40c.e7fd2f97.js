@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[9571],{453:e=>{e.exports=JSON.parse('{"label":"CNCF","permalink":"/blog/tags/cncf","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

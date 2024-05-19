@@ -46,7 +46,8 @@
     "**/img/**",
     "**/*.zip",
     "**/*.json",
-    "blog/authors.yml"
+    "blog/authors.yml",
+    "docs/apireference_v1alpha1.md"
   ],
   "allowCompoundWords": true,
   "ignoreRegExpList": [

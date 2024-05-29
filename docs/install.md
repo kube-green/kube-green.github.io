@@ -40,7 +40,7 @@ For example, to deploy the controller in another namespace, change the file [kus
 
 #### RBAC
 
-At the moment, kube-green is released with a ClusterRole that allows to manage all resources in all namespaces. If you want to restrict the access to specific resources, you can change the ClusterRole in the file [role.yaml](https://github.com/kube-green/kube-green/blob/main/config/rbac/role.yaml) accordingly.
+kube-green is released with a ClusterRole that allows to manage all resources in all namespaces. If you want to restrict the access to specific resources, you can change the ClusterRole in the file [role.yaml](https://github.com/kube-green/kube-green/blob/main/config/rbac/role.yaml) accordingly.
 
 ### Deploy
 

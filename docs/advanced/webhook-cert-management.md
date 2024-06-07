@@ -15,116 +15,6 @@ This is the recommended way to manage certificates for the webhook.
 
 If you want to avoid deploying `cert-manager`, you can use the following alternatives.
 
-### Automated Management of Webhook Certificates
-
-You can add it as `initContainer` in the `kube-green` deployment, or set up a specific `Job` which manage it at deploy (for example, as helm hook).
-
-The following is an example of the configured `initContainer`. It is needed to replace `<SERVICE_NAME>` and `<SECRET_NAME>` with the correct ones.
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: kube-green
-spec:
-  template:
-    spec:
-      initContainers:
-        - name: kube-webhook-certgen
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:latest
-          args:
-          - create
-          - --host=$(SERVICE_NAME),$(SERVICE_NAME).$(POD_NAMESPACE).svc
-          - --namespace=$(POD_NAMESPACE)
-          - --secret-name=$(SECRET_NAME)
-          - --cert-name=tls.crt
-          - --key-name=tls.key
-          env:
-          - name: SERVICE_NAME
-            value: <SERVICE_NAME>
-          - name: POD_NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: SECRET_NAME
-            value: <SECRET_NAME>
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            privileged: false
-            seccompProfile:
-              type: RuntimeDefault
-            capabilities:
-              drop:
-              - ALL
-          volumeMounts:
-          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-            name: serviceaccount-token
-            readOnly: true
-        - name: kube-webhook-certpatch
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:latest
-          args:
-          - patch
-          - --namespace=$(POD_NAMESPACE)
-          - --patch-mutating=false
-          - --patch-validating=true
-          - --secret-name=$(SECRET_NAME)
-          - --webhook-name=kube-green
-          env:
-          - name: POD_NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: SECRET_NAME
-            value: SECRET
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            privileged: false
-            seccompProfile:
-              type: RuntimeDefault
-            capabilities:
-              drop:
-              - ALL
-          volumeMounts:
-          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-            name: serviceaccount-token
-            readOnly: true
-      containers:
-      - name: kube-green
-        image: ghcr.io/kube-green/kube-green:latest
-        ...other configuration...
-        volumeMounts:
-        - name: webhook-tls
-          mountPath: /tmp/k8s-webhook-server/serving-certs
-        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-          name: serviceaccount-token
-          readOnly: true
-      volumes:
-      - name: webhook-tls
-        secret:
-          secretName: <SECRET_NAME>
-          optional: true
-      - name: serviceaccount-token
-        projected:
-          defaultMode: 0444
-          sources:
-          - serviceAccountToken:
-              expirationSeconds: 3600
-              path: token
-          - configMap:
-              items:
-              - key: ca.crt
-                path: ca.crt
-              name: kube-root-ca.crt
-          - downwardAPI:
-              items:
-              - fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-                path: namespace
-```
-
 ### Manual management of certificates
 
 To manually manage the certificates, you need to create a K8s secret of type `kubernetes.io/tls` with `tls.crt` and `tls.key` keys.
@@ -227,3 +117,11 @@ kubectl create secret tls webhook-server-cert --cert=./tls.crt --key=./tls.key
 Once generated, you can create the `kube-green` manifests (commenting the `[CERT-MANAGER]` part), create the base64 of the `ca.crt` file and patch the webhook configuration with the new caBundle.
 
 </details>
+
+### Automated Management of Webhook Certificates
+
+It is possible to manually manage the certificates using some tools which automate the process described above.
+
+One tool that can be used is [kube-webhook-certgen](https://github.com/kubernetes/ingress-nginx/tree/main/images/kube-webhook-certgen). It is possible to view a configuration of this tool in the [kube-green chart](https://github.com/kube-green/kube-green/tree/main/charts).
+
+It is possible to enable it with setting the `jobsCert.enabled` to `true` in the `values.yaml` file of the chart and `certManager.enabled` to false.

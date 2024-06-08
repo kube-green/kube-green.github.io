@@ -3,7 +3,7 @@
 
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
-const darkCodeTheme = themes.dracula;
+const darkCodeTheme = themes.vsDark;
 
 const LOGO_IMAGE = 'img/logo.svg';
 const GITHUB_BASE_URL = 'https://github.com/kube-green/kube-green.github.io/'
@@ -86,7 +86,20 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        darkTheme: {
+          ...darkCodeTheme,
+          styles: [
+            ...darkCodeTheme.styles,
+            {
+              types: ['key'],
+              languages: ['yaml'],
+              style: {
+                color: 'rgb(215, 186, 125)'
+              }
+            }
+          ]
+        },
+        additionalLanguages: ['yaml', 'json'],
       },
       algolia: {
         appId: 'OO5LH8JODS',

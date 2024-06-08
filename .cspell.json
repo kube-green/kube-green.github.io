@@ -51,6 +51,7 @@
   ],
   "allowCompoundWords": true,
   "ignoreRegExpList": [
-    "\".*\": \".*\""
+    "\".*\": \".*\"",
+    "/^\\s*```[\\s\\S]*?^\\s*```/gm"
   ]
 }

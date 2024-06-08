@@ -6,11 +6,11 @@ sidebar_position: 3
 
 ## Prerequisite
 
-*kube-green* support all Kubernetes cluster versions >= 1.19 &lt;= 1.28 and OpenShift Container Platform v4.
+*kube-green* support all Kubernetes cluster versions >= 1.23 &lt;= 1.30 and OpenShift Container Platform v4.
 
 Supported architectures are: amd64, arm64.
 
-To successfully install *kube-green*, in the cluster must be installed a **cert-manager**. If it is not already installed installed, [click here](https://cert-manager.io/docs/installation/).
+*kube-green* needs certificates to exposes webhooks. The recommended way to handle certificates is using the [cert-manager](https://cert-manager.io/docs/installation/). Otherwise, you can manage certificates manually as described [here](./advanced/webhook-cert-management.md).
 
 ## kubectl apply
 

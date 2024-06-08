@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Certificate Management
 
-`kube-green` webhooks require a valid certificate exposes the webhook server to the Kubernetes API server.
+`kube-green` webhooks require a valid certificate to expose the webhook server to the Kubernetes API server.
 
 ## With cert-manager
 
@@ -47,7 +47,7 @@ volumeMounts:
 
 The CA which sign the certificate must be set as caBundle of clientConfig in the webhook configuration.
 
-With the `kustomize` configuration in the [kube-green repository](https://github.com/kube-green/kube-green/tree/main/config), you can comment all the parts below the `[CERT-MANAGER]` comment.
+If you are using the `kustomize` configuration in the [kube-green repository](https://github.com/kube-green/kube-green/tree/main/config), you can comment all the parts below the `[CERT-MANAGER]` comment and write a kustomization to insert the caBundle correctly.
 
 Example of the webhook configuration to patch, with `<CA_BUNDLE>` as the base64 of the `ca.crt` file:
 
@@ -120,8 +120,8 @@ Once generated, you can create the `kube-green` manifests (commenting the `[CERT
 
 ### Automated Management of Webhook Certificates
 
-It is possible to manually manage the certificates using some tools which automate the process described above.
+It is possible to manage the certificates using some tools which automate the process described above.
 
-One tool that can be used is [kube-webhook-certgen](https://github.com/kubernetes/ingress-nginx/tree/main/images/kube-webhook-certgen). It is possible to view a configuration of this tool in the [kube-green chart](https://github.com/kube-green/kube-green/tree/main/charts).
+One tool that can be used is [kube-webhook-certgen](https://github.com/kubernetes/ingress-nginx/tree/main/images/kube-webhook-certgen). It is possible to view a configuration of this tool in the [kube-green helm chart](https://github.com/kube-green/kube-green/tree/main/charts). In this case, there are some jobs which create the certificate if it does not exist and patch the webhook manifest at runtime.
 
-It is possible to enable it with setting the `jobsCert.enabled` to `true` in the `values.yaml` file of the chart and `certManager.enabled` to false.
+It is possible to enable it with setting the `jobsCert.enabled` to `true` in the `values.yaml` file of the chart and setting `certManager.enabled` to false.

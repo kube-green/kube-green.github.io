@@ -41,7 +41,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "js-yaml": "^4.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "browserslist": {
     "production": [

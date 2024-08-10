@@ -7,6 +7,8 @@ sidebar_position: 4
 In the namespace where you want to enable *kube-green*, apply the SleepInfo CRD.
 An example of CRD is accessible [at this link](https://github.com/kube-green/kube-green/blob/main/testdata/working-hours.yml).
 
+<!-- TODO: add link to api reference instead of the following list -->
+
 The SleepInfo spec contains:
 
 * **weekdays**  
@@ -30,6 +32,10 @@ An array of object containing the resource to exclude from sleep. It can specify
 or
   * **matchLabels**: an object of strings with the labels to identify a resources
 click [here](#exclude-reference) to see an example.
+
+## Patches
+
+<!-- TODO: -->
 
 ## Examples
 
@@ -132,3 +138,7 @@ spec:
 ```
 
 With this CRD, it's configured a sleep to 20:00 and wake up to 08:00 on weekdays, excluding the CronJob `do-not-suspend` and all the supported resources with the label `kube-green.dev/exclude: true`.
+
+### Custom patches
+
+<!-- TODO: -->

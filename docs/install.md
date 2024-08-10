@@ -12,7 +12,13 @@ Supported architectures are: amd64, arm64.
 
 *kube-green* needs certificates to exposes webhooks. The recommended way to handle certificates is using the [cert-manager](https://cert-manager.io/docs/installation/). Otherwise, you can manage certificates manually as described [here](./advanced/webhook-cert-management.md).
 
-## kubectl apply
+## Helm chart
+
+*kube-green* has its own Helm chart which can be used to install the operator in the cluster.
+
+<!-- TODO: -->
+
+## Default static install
 
 With this method, you can not change the default configuration parameters.
 

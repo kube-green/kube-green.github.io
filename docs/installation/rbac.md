@@ -15,7 +15,7 @@ To add the permission to manage other resources, it is possible to aggregate cus
 
 ### Example
 
-The following example shows how to create a ClusterRole that allows the operator to manage ReplicaSets resources. For each resource, you need to add at least the following verbs: `get`, `list`, `patch`, `update`, `watch`.
+The following example shows how to create a ClusterRole that allows the operator to manage ReplicaSets resources. For each resource, you need to add at least the following verbs:  `create`, `delete`, `get`, `list`, `patch`, `update`, `watch`.
 <!-- TODO: verify that create and delete verbs can be not set -->
 
 ```yaml
@@ -42,4 +42,27 @@ rules:
 
 ## ClusterRole with Helm Chart
 
-<!-- TODO: -->
+It is possible to manage the custom ClusterRole with the *kube-green* Helm Chart. To do this, you need to enable the `rbac.customClusterRole` configuration in the `values.yaml` file.
+
+An example configuration:
+
+```yaml
+  customClusterRole:
+    enabled: true
+    name: kube-green-additional-resources
+    rules:
+      - apiGroups:
+        - apps
+        resources:
+        - replicasets
+        verbs:
+        - create
+        - delete
+        - get
+        - list
+        - patch
+        - update
+        - watch
+```
+
+This configuration will generate a ClusterRole with the specified name and rules.

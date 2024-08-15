@@ -22,6 +22,7 @@ Check the [API reference](apireference_v1alpha1.md) for the SleepInfo CRD to und
 Patches are used to define how to change the resources so that the runtime will "sleep". The patches are applied to the resources at the sleep time and are reverted at the wake up time.
 
 In this way, it is possible to support all the Kubernetes resources, also the ones defined through the custom resource definitions.  
+<!-- TODO: anchor in html not seen. Use markdown anchor in template -->
 To let *kube-green* support a custom resource, you need to define the specific `patch` for the resource inside the `SleepInfo` (the API reference is available [here](apireference_v1alpha1.md#kube-green.com/v1alpha1.Patch)) and add the permission to the ClusterRole associated to the *kube-green* manager ([here how to configure the RBAC](./installation/rbac.md)), if not already set.
 
 ## Examples

@@ -22,7 +22,7 @@ kubectl apply -f https://github.com/kube-green/kube-green/releases/latest/downlo
 
 ## Getting started
 
-* [`kubectl apply`](./install.md#kubectl-apply): install using kubectl apply and static manifest;
-* [`helm`](./install.md#helm-chart): install *kube-green* using the helm chart; this allows to customize the installation if necessary;
-* [`Operator Lifecycle Manager (OLM)`](./install.md#operator-lifecycle-manager-olm): it's possible to install *kube-green* with OperatorHub or, if you use OpenShift, with the OpenShift web console;
-* [`kustomize`](./install.md#kustomize): in the *kube-green* GitHub repository are available the kustomize configuration. In this way, it's possible to release the development version and configure it editing the files.
+* [kubectl apply](./install.md#kubectl-apply): install using kubectl apply and static manifest;
+* [helm](./install.md#helm-chart): install *kube-green* using the helm chart; this allows to customize the installation if necessary;
+* [Operator Lifecycle Manager (OLM)](./install.md#operator-lifecycle-manager-olm): it's possible to install *kube-green* with OperatorHub or, if you use OpenShift, with the OpenShift web console;
+* [kustomize](./install.md#kustomize): in the *kube-green* GitHub repository are available the kustomize configuration. In this way, it's possible to release the development version and configure it editing the files.

@@ -7,7 +7,13 @@ sidebar_position: 4
 In the namespace where you want to enable *kube-green*, apply the `SleepInfo` resource.
 An example of `SleepInfo` is accessible [at this link](https://github.com/kube-green/kube-green/blob/main/testdata/working-hours.yml).
 
-By default, the managed resources are `Deployments` and `StatefulSets`, and it is possible to enable the `CronJobs`. You can manage also other resources adding [custom patches](#patches).
+By default, the default managed resources are
+
+* `Deployments`: enabled by default, it could be disabled with the `suspendDeployments` field;
+* `StatefulSets`: enabled by default, it could be disabled with the `suspendStatefulSets` field;
+* `CronJobs`: disabled by default, it could be enabled with the `suspendCronJobs` field.
+
+You can manage also other resources adding [custom patches](#patches).
 
 Check the [API reference](apireference_v1alpha1.md) for the SleepInfo CRD to understand each field.
 

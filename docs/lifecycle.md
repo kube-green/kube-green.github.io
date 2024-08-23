@@ -34,8 +34,9 @@ With this **SleepInfo**, called *working-hours*, namespace will be slept at 20:0
 
 - Deployment
 - CronJobs
+- StatefulSet
 
-By default, on sleep, deployment resources are stopped (if not excluded).  
+By default, on sleep, deployment and statefulset resources are stopped (if not excluded).  
 If you want to suspend also cronjobs, set **suspendCronJobs** to **true**.
 
 ### What means sleep and wake up a resource?
@@ -44,9 +45,9 @@ The sleep of the resource is the stop of the resource, and it depends on the typ
 
 The wake up of the resource is the restore of the status of the resource before the sleep.
 
-#### Deployment
+#### Deployment and StatefulSet
 
-To sleep the *Deployment* resources, replicas are set to 0.
+To sleep the *Deployment* and *StatefulSet* resources, replicas are set to 0.
 
 To wake up, the number of replicas is set to the number of replicas before the sleep.
 
@@ -58,4 +59,4 @@ To wake up, the suspend field is restored.
 
 ### How state is saved across sleep and wake up?
 
-The state of the resources before the sleep is saved in a secret with the name of the *SleepInfo* in the namespace.
+The state of the resources before the sleep is saved in a secret with the name of the *SleepInfo* resource in the namespace.

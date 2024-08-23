@@ -15,8 +15,7 @@ To add the permission to manage other resources, it is possible to aggregate cus
 
 ### Example
 
-The following example shows how to create a ClusterRole that allows the operator to manage ReplicaSets resources. For each resource, you need to add at least the following verbs:  `create`, `delete`, `get`, `list`, `patch`, `update`, `watch`.
-<!-- TODO: verify that create and delete verbs can be not set -->
+The following example shows how to create a ClusterRole that allows the operator to manage ReplicaSets resources. For each resource, you need to add at least the following verbs: `get`, `list`, `patch`, `update`, `watch`.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -31,8 +30,6 @@ rules:
   resources:
   - replicasets
   verbs:
-  - create # TODO: verify if this is necessary
-  - delete # TODO: verify if this is necessary
   - get
   - list
   - patch
@@ -56,8 +53,6 @@ An example configuration:
         resources:
         - replicasets
         verbs:
-        - create
-        - delete
         - get
         - list
         - patch

@@ -34,6 +34,7 @@ With this **SleepInfo**, called *working-hours*, namespace will be slept at 20:0
 
 - Deployment
 - CronJobs
+- Statefulset (from 0.6.0)
 
 By default, on sleep, deployment resources are stopped (if not excluded).  
 If you want to suspend also cronjobs, set **suspendCronJobs** to **true**.

@@ -58,7 +58,7 @@ This command, by default, will not delete the CRDs from the cluster, which shoul
 
 If you have set the `crds.keep` value to *false* during the installation, also the CRDs will be deleted as well.
 
-:::danger
+:::warning
 This command will remove all `SleepInfo` resources from the cluster:
 
 ```sh

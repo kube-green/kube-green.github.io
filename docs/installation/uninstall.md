@@ -45,6 +45,28 @@ To uninstall kube-green from the cluster, change working directory to the root o
 make undeploy
 ```
 
+## Helm Chart
+
+To uninstall kube-green from the cluster, run:
+
+```sh
+helm uninstall RELEASE_NAME
+```
+
+where `RELEASE_NAME` is the name of the `kube-green` release currently installed (if you used the [install guide](./install.md#helm-chart), `kube-green`).  
+This command, by default, will not delete the CRDs from the cluster, which should be deleted manually.
+
+If you have set the `crds.keep` value to *false* during the installation, also the CRDs will be deleted as well.
+
+:::danger
+This command will remove all `SleepInfo` resources from the cluster:
+
+```sh
+kubectl delete crd sleepinfos.kube-green.io
+```
+
+:::
+
 ## Operator Lifecycle Manager (OLM)
 
 To uninstall kube-green from the cluster, follow [this guide](https://olm.operatorframework.io/docs/tasks/uninstall-operator/).

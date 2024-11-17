@@ -29,7 +29,7 @@ go install github.com/ahmetb/gen-crd-api-reference-docs@v0.3.0
 
 mkdir -p ${GOPATH}/src/github.com/kube-green
 gitdir="${GOPATH}/src/github.com/kube-green/kube-green"
-git clone "https://github.com/kube-green/kube-green.git" "${gitdir}"
+git clone --depth=1 "https://github.com/kube-green/kube-green.git" "${gitdir}"
 cd "${gitdir}"
 
 generate_reference_docs_per_ref(){

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkube_green_github_io=self.webpackChunkkube_green_github_io||[]).push([[8158],{8158:(e,u,a)=>{a.r(u),a.d(u,{DocSearchModal:()=>b.a1});var b=a(3219)}}]);

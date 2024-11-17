@@ -38,7 +38,25 @@ and see when the `kube-green-controller-manager` pod is up and running.
 
 *kube-green* has its own Helm chart which can be used to install the operator in the cluster.
 
-<!-- TODO: -->
+### 1. Add the Helm repository
+
+This repository is the source of kube-green charts.
+
+```sh
+helm repo add kube-green https://kube-green.github.io/kube-green
+```
+
+### 2. Install kube-green
+
+To install the kube-green Helm chart, run:
+
+```sh
+helm install kube-green kube-green/kube-green --namespace kube-green --create-namespace
+```
+
+### Installation options
+
+A full list of available Helm values is on the [Helm chart repository](https://github.com/kube-green/kube-green/tree/main/charts/kube-green).
 
 ## Operator Lifecycle Manager (OLM)
 

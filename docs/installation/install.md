@@ -43,7 +43,7 @@ and see when the `kube-green-controller-manager` pod is up and running.
 This repository is the source of kube-green charts.
 
 ```sh
-helm repo add kube-green https://kube-green.github.io/kube-green
+helm repo add kube-green  https://kube-green.github.io/helm-charts/
 ```
 
 ### 2. Install kube-green

@@ -136,7 +136,7 @@ spec:
   wakeUpAt: "08:00"
   timeZone: "Europe/Rome"
   suspendCronJobs: true
-  excludeRef:
+  includeRef:
     - matchLabels: 
         kube-green.dev/include: true
 ```

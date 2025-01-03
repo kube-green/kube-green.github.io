@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Installation Methods
+# Install
 
 ## kubectl apply
 

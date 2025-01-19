@@ -41,6 +41,8 @@ const config = {
         blog: {
           showReadingTime: true,
           editUrl: `${GITHUB_EDIT_BASE_URL}blog/`,
+          postsPerPage: "ALL",
+          blogTitle: "kube-green Blog",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

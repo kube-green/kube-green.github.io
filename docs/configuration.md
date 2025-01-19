@@ -7,13 +7,13 @@ sidebar_position: 4
 In the namespace where you want to enable *kube-green*, apply the `SleepInfo` resource.
 An example of `SleepInfo` is accessible [at this link](https://github.com/kube-green/kube-green/blob/main/testdata/working-hours.yml).
 
-By default, the default managed resources are
+By default, the managed resources are:
 
-* `Deployments`: enabled by default, it could be disabled with the `suspendDeployments` field;
-* `StatefulSets`: enabled by default, it could be disabled with the `suspendStatefulSets` field;
-* `CronJobs`: disabled by default, it could be enabled with the `suspendCronJobs` field.
+* `Deployments`: enabled by default, it can be disabled with the `suspendDeployments` field;
+* `StatefulSets`: enabled by default, it can be disabled with the `suspendStatefulSets` field;
+* `CronJobs`: disabled by default, it can be enabled with the `suspendCronJobs` field.
 
-You can manage also other resources adding [custom patches](#patches).
+You can manage other resources by adding [custom patches](#patches).
 
 Check the [API reference](apireference_v1alpha1.md) for the SleepInfo CRD to understand each field.
 
@@ -21,14 +21,14 @@ Check the [API reference](apireference_v1alpha1.md) for the SleepInfo CRD to und
 
 Patches are used to define how to change the resources so that the runtime will "sleep". The patches are applied to the resources at the sleep time and are reverted at the wake up time.
 
-In this way, it is possible to support all the Kubernetes resources, also the ones defined through the custom resource definitions.  
-To let *kube-green* support a custom resource, you need to define the specific `patch` for the resource inside the `SleepInfo` (the API reference is available [here](apireference_v1alpha1.md)) and add the permission to the ClusterRole associated to the *kube-green* manager ([here how to configure the RBAC](./installation/rbac.md)), if not already set.
+In this way, it is possible to support all the Kubernetes resources, including those defined through custom resource definitions.  
+To let *kube-green* support a custom resource, you need to define the specific `patch` for the resource inside the `SleepInfo` (the API reference is available [here](apireference_v1alpha1.md)) and add the permission to the ClusterRole associated with the *kube-green* manager ([here is how to configure the RBAC](./installation/rbac.md)), if not already set.
 
 ## Examples
 
 ### Simple SleepInfo resource
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 from monday to friday (in Rome timezone) for the default managed resources.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 from Monday to Friday (in Rome timezone) for the default managed resources.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -44,7 +44,7 @@ spec:
 
 ### Exclude resources
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 from monday to friday (in Rome timezone), for the default managed resources and the `CronJobs`, excluding the `Deployment` named `api-gateway`.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 from Monday to Friday (in Rome timezone), for the default managed resources and the `CronJobs`, excluding the `Deployment` named `api-gateway`.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -65,7 +65,7 @@ spec:
 
 ### Sleep without wake up
 
-The follow configuration sets a sleep to 20:00 from monday to friday (in Rome timezone) for the default managed resources  and the `CronJobs`. The wake up is not set, so the resources will be suspended until them will be manually changed (for example, through a redeployment).
+The following configuration sets a sleep time to 20:00 from Monday to Friday (in Rome timezone) for the default managed resources and the `CronJobs`. The wake up time is not set, so the resources will be suspended until they are manually changed (for example, through a redeployment).
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -81,7 +81,7 @@ spec:
 
 ### Suspend only CronJobs
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 on each day of the week (in Rome timezone), only for `CronJobs`, excluding the specific `CronJob` named `do-not-suspend`.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 on each day of the week (in Rome timezone), only for `CronJobs`, excluding the specific `CronJob` named `do-not-suspend`.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -104,7 +104,7 @@ spec:
 
 ### Exclude with labels
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 on each day of the week (in Rome timezone), for the default managed resources, excluding the resources with the label `kube-green.dev/exclude: true`.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 on each day of the week (in Rome timezone), for the default managed resources, excluding the resources with the label `kube-green.dev/exclude: true`.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -123,7 +123,7 @@ spec:
 
 ### Include with labels
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 on each day of the week (in Rome timezone), for the default and `CronJobs` resources with the label `kube-green.dev/include: true`.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 on each day of the week (in Rome timezone), for the default and `CronJobs` resources with the label `kube-green.dev/include: true`.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -143,9 +143,9 @@ spec:
 
 ### Custom patches
 
-The follow configuration sets a sleep to 20:00 and wake up to 08:00 from monday to friday (in Rome timezone) for the default managed resources, the `CronJobs` and add the support to the not managed resource `ReplicaSets`.
+The following configuration sets a sleep time to 20:00 and wake up time to 08:00 from Monday to Friday (in Rome timezone) for the default managed resources, the `CronJobs` and adds support to the not managed resource `ReplicaSets`.
 
-This is only an example on how to add custom patches to the resources. The patch in this example sets the `replicas` field to `0`. In this way, it is possible to support also some custom resources.
+This is only an example of how to add custom patches to the resources. The patch in this example sets the `replicas` field to `0`. In this way, it is possible to support some custom resources.
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1

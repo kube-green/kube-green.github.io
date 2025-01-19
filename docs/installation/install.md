@@ -7,7 +7,7 @@ sidebar_position: 1
 ## kubectl apply
 
 :::info
-With this method, you can not change the default configuration parameters.
+With this method, you cannot change the default configuration parameters.
 :::
 
 You need to have [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) installed and connected to the cluster where you want to install *kube-green*.
@@ -26,7 +26,7 @@ kubectl apply -f https://github.com/kube-green/kube-green/releases/download/${RE
 
 with `${RELEASE_TAG}` correctly filled.
 
-*kube-green* will be installed in `kube-green` namespace, and it is possible to see the installation status running:
+*kube-green* will be installed in the `kube-green` namespace, and you can check the installation status by running:
 
 ```sh
 kubectl get pods --namespace kube-green
@@ -43,7 +43,7 @@ and see when the `kube-green-controller-manager` pod is up and running.
 This repository is the source of kube-green charts.
 
 ```sh
-helm repo add kube-green  https://kube-green.github.io/helm-charts/
+helm repo add kube-green https://kube-green.github.io/helm-charts/
 ```
 
 ### 2. Install kube-green
@@ -56,29 +56,31 @@ helm install kube-green kube-green/kube-green --namespace kube-green --create-na
 
 ### Installation options
 
-A full list of available Helm values is on the [Helm chart repository](https://github.com/kube-green/kube-green/tree/main/charts/kube-green).
+For a complete list of available Helm values, please visit the [Helm chart repository](https://github.com/kube-green/kube-green/tree/main/charts/kube-green).
 
 ## Operator Lifecycle Manager (OLM)
 
+When using this installation method, you can specify any namespace. However, due to OLM's RBAC management limitations, the operator will only be able to manage default resources.
+
 ### Install from OperatorHub.io
 
-You can find *kube-green* in the [OperatorHub.io website](https://operatorhub.io/operator/kube-green). Click the Install button, and follow the instructions.
+You can find *kube-green* on [OperatorHub.io](https://operatorhub.io/operator/kube-green). Simply click the Install button and follow the provided instructions.
 
 ### Install on OpenShift
 
-*kube-green* is in the [Red Hat-provided Operator catalogs](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-rh-catalogs.html) called community operators. On OpenShift 4 you can install *kube-green* from [OperatorHub](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-understanding-operatorhub.html). To install it, follow [this guide](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-adding-operators-to-cluster.html).
+*kube-green* is available in the [Red Hat provided Operator catalogs](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-rh-catalogs.html) called community operators. On OpenShift 4, you can install *kube-green* from [OperatorHub](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-understanding-operatorhub.html). To install it, follow [this guide](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-adding-operators-to-cluster.html).
 
 ## kustomize
 
 ### Change default configuration
 
-You can change default configuration editing the config files.
+You can change the default configuration by editing the config files.
 
 For example, to deploy the controller in another namespace, change the file [kustomization.yaml](https://github.com/kube-green/kube-green/blob/main/config/default/kustomization.yaml#L2) with the desired namespace name.
 
 ### Deploy
 
-To install *kube-green* in the cluster, clone the repository and run
+To install *kube-green* in the cluster, clone the repository and run:
 
 ```bash
 make deploy

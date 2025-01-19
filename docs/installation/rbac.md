@@ -4,14 +4,14 @@ sidebar_position: 6
 
 # RBAC
 
-Starting from *kube-green* version 0.6, it is possible to patch all types of resources writing custom patches.
+Starting from *kube-green* version 0.6, it is possible to patch all types of resources by writing custom patches.
 To see more about this feature, check the [configuration](../configuration.md) page.
 
 ## Roles and RoleBindings
 
-By default, *kube-green* is installed with a set of ClusterRole and a ClusterRoleBinding that allow the operator to manage the default supported resources in the cluster (*Deployment*, *CronJob* and *StatefulSet*).
+By default, *kube-green* is installed with a set of ClusterRole and ClusterRoleBinding that allow the operator to manage the default supported resources in the cluster (*Deployment*, *CronJob*, and *StatefulSet*).
 
-To add the permission to manage other resources, it is possible to aggregate custom rules to the default ClusterRole, using the [Kubernetes Aggregated ClusterRoles feature](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) setting the `kube-green.dev/aggregate-to-manager: "true"` label (which is used to aggregate the ClusterRole).
+To add permission to manage other resources, it is possible to aggregate custom rules to the default ClusterRole, using the [Kubernetes Aggregated ClusterRoles feature](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) by setting the `kube-green.dev/aggregate-to-manager: "true"` label (which is used to aggregate the ClusterRole).
 
 ### Example
 

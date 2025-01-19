@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# Cluster downscale
+# Cluster Downscale
 
-Here the result obtained by *kube-green* in a cluster of 75 namespaces, with *kube-green* enabled in 48 namespaces with pods in sleep in non working hours.
+Here are the results obtained by *kube-green* in a cluster of 75 namespaces, with *kube-green* enabled in 48 namespaces with pods in sleep during non-working hours.
 
-The configuration used is to wake up in working hours:
+The configuration used is to wake up during working hours:
 
 ```yaml
 apiVersion: kube-green.com/v1alpha1
@@ -25,62 +25,62 @@ spec:
       name:       api-gateway
 ```
 
-In the following images are showed 3 lines, representing request, limit and usage for memory and CPU.
+In the following images, there are 3 lines representing request, limit and usage for memory and CPU.
 
 Request is the amount of resource allocated (reserved by pod) in the cluster.
-Limit is the amount of resource allowed to be used by pod in the cluster.
-Usage is the amount of resource actually used by pod in the cluster. This is the real consumption of the pod.
+Limit is the amount of resource allowed to be used by the pod in the cluster.
+Usage is the amount of resource actually used by the pod in the cluster. This is the real consumption of the pod.
 
-### Memory usage
+### Memory Usage
 
-In this image it is possible to see the memory usage of the cluster.  
+In this image, it is possible to see the memory usage of the cluster.  
 
-It is possible to see the memory lines with 5 peak in the working day, and a low usage and allocation of memories during the nights and the weekends.
+It is possible to see the memory lines with 5 peaks during the working day, and a low usage and allocation of memory during the nights and weekends.
 
 ![Memory usage](/img/usecase/15.9-15-10-memory.png)
 
-### CPU usage
+### CPU Usage
 
-It is possible to see the same as for memory also for the CPU in the following image.  
+It is possible to see the same pattern for CPU usage in the following image.  
 
-![Memory usage](/img/usecase/15.9-15-10-CPU.png)
+![CPU usage](/img/usecase/15.9-15-10-CPU.png)
 
 ### Pods
 
-In this image, the changes of the number of pods in the cluster.
+In this image, the changes in the number of pods in the cluster are shown.
 
 ![Pods](/img/usecase/15.9-15-10-pods.png)
 
-### Numeric summary
+### Numeric Summary
 
 In this table, a comparison between before and after the use of *kube-green*.
 
 |                       | Total  | With kube-green  | Difference       |
 | --------------------- | ------ | ---------------- | ---------------- |
-| Number of pods        | 1050   | 450              | 600             |
-| Memory consumed [Gb]  | 54     | 21               | 33              |
-| CPU consumed    [cpu] | 4.5    | 1                | 3.5             |
-| Memory allocated [Gb] | 75     | 30               | 45              |
-| CPU allocated [cpu]   | 40     | 15               | 25              |
-| CO2eq/week [kg]       | 222    | 139              | **83**          |
+| Number of pods        | 1050   | 450              | 600              |
+| Memory consumed [Gb]  | 54     | 21               | 33               |
+| CPU consumed    [cpu] | 4.5    | 1                | 3.5              |
+| Memory allocated [Gb] | 75     | 30               | 45               |
+| CPU allocated [cpu]   | 40     | 15               | 25               |
+| CO2eq/week [kg]       | 222    | 139              | **83**           |
 
-As show in the table, are saved 83 Kg of CO2eq per week for this cluster. So in a year (52 weeks), the CO2eq saved is **-4316** Kg CO2eq.
+As shown in the table, 83 Kg of CO2eq are saved per week for this cluster. So in a year (52 weeks), the CO2eq saved is **-4316** Kg CO2eq.
 
 ### Nodes
 
-In this use case, the resource saved are enough to downscale the number of nodes.  
-The size of 1 node in this cluster is of 2 core of CPU and 8 Gb of memory.
+In this use case, the resources saved are enough to downscale the number of nodes.  
+The size of 1 node in this cluster is 2 cores of CPU and 8 Gb of memory.
 
-In this image it is possible to see how changes the number of nodes in the cluster depending on time, follow the same line of the resource consumption.
+In this image, it is possible to see how the number of nodes in the cluster changes over time, following the same pattern as resource consumption.
 
-![Pods](/img/usecase/15.9-15-10-nodes.png)
+![Nodes](/img/usecase/15.9-15-10-nodes.png)
 
-It is possible to see the decrease of the numbers of nodes from a maximum value of 13 to a minimum of 7. In most case, the value are between 12 and 8 nodes, so 4 nodes are stopped every night and every weekend.
+It is possible to see the decrease in the number of nodes from a maximum value of 13 to a minimum of 7. In most cases, the values are between 12 and 8 nodes, so 4 nodes are stopped every night and every weekend.
 
-This could bring to a reduction not only of the CO2 produced, but also of the cost of the cluster because in the cloud provider the cluster is usually paid with the number of nodes.
+This could lead to a reduction not only in CO2 production but also in the cost of the cluster because, with cloud providers, the cluster is usually paid for based on the number of nodes.
 
 ### Conclusion
 
-In this use case, it is possible to see how much *kube-green* could save in CO2eq production and also in cost of a cluster.
+In this use case, it is possible to see how much *kube-green* can save in CO2eq production and also in the cost of a cluster.
 
-Try out to your cluster, and calculate how much CO2 can you save with [this tool](./../FAQ.mdx#how-many-co2-is-produced-by-pod)!
+Try it out on your cluster, and calculate how much CO2 you can save with [this tool](./../FAQ.mdx#how-many-co2-is-produced-by-pod)!

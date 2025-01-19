@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # How it works
 
-The use of `kube-green` is very simple. Once installed on the cluster, configure the desired CRD to make it works.  
+The use of `kube-green` is very simple. Once installed on the cluster, configure the desired CRD to make it work.  
 The CRD used by `kube-green` is called **SleepInfo**. In this configuration, it is possible to configure the sleep and wake up time for the namespace.
 
 An example of configuration is:
@@ -26,9 +26,9 @@ spec:
       name:       my-deployment
 ```
 
-With this **SleepInfo**, called *working-hours*, namespace will be slept at 20:00 and woken up at 08:00 (Italy time zone) on weekdays (Monday to Friday).
+With this **SleepInfo**, called *working-hours*, the namespace will be slept at 20:00 and woken up at 08:00 (Italy time zone) on weekdays (Monday to Friday).
 
-## What resources handles?
+## What resources are handled?
 
 *kube-green* handles:
 
@@ -37,13 +37,13 @@ With this **SleepInfo**, called *working-hours*, namespace will be slept at 20:0
 - StatefulSet
 
 By default, on sleep, deployment and statefulset resources are stopped (if not excluded).  
-If you want to suspend also cronjobs, set **suspendCronJobs** to **true**.
+If you want to suspend cronjobs as well, set **suspendCronJobs** to **true**.
 
-### What means sleep and wake up a resource?
+### What does it mean to sleep and wake up a resource?
 
-The sleep of the resource is the stop of the resource, and it depends on the type of resources.
+The sleep of the resource is the stop of the resource, and it depends on the type of resource.
 
-The wake up of the resource is the restore of the status of the resource before the sleep.
+The wake up of the resource is the restoration of the status of the resource before the sleep.
 
 #### Deployment and StatefulSet
 
@@ -53,10 +53,10 @@ To wake up, the number of replicas is set to the number of replicas before the s
 
 #### CronJobs
 
-To sleep the *CronJob* resources, are set as suspended.
+To sleep the *CronJob* resources, they are set as suspended.
 
 To wake up, the suspend field is restored.
 
-### How state is saved across sleep and wake up?
+### How is the state saved across sleep and wake up?
 
 The state of the resources before the sleep is saved in a secret with the name of the *SleepInfo* resource in the namespace.

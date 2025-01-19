@@ -6,22 +6,22 @@ sidebar_position: 11
 
 ### I have a couple of nodes with low utilization, but they are not scaled down. Why?
 
-Have you set the [cluster autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)?
+Have you set up the [cluster autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)?
 
-If cluster autoscaler is set up, it should be correctly configured to scale down the nodes.
+If the cluster autoscaler is set up, it should be correctly configured to scale down the nodes.
 To see the possible issues, check the [cluster autoscaler documentation](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#i-have-a-couple-of-nodes-with-low-utilization-but-they-are-not-scaled-down-why).
 
-### I want avoid to deploy cert-manager. What are the alternatives?
+### I want to avoid deploying cert-manager. What are the alternatives?
 
 You can find alternatives to cert-manager installation in the [cert-manager alternatives](/docs/advanced/webhook-cert-management#without-cert-manager) section.
 
-### How many CO2 is produced by pod?
+### How much CO2 is produced by a pod?
 
-This calculations are based on the following assumptions:
+These calculations are based on the following assumptions:
 
-- Emissions for cloud server using 100% green electricity: **160 Kg CO2eq / year and server** (from [goclimate.com](https://www.goclimate.com/blog/the-carbon-footprint-of-servers/#:~:text=Cloud%20server%20using%20100%%20green%20electricity:%20160%20kg%20CO2e%20/%20year%20and%20server)
+- Emissions for a cloud server using 100% green electricity: **160 Kg CO2eq / year and server** (from [goclimate.com](https://www.goclimate.com/blog/the-carbon-footprint-of-servers/#:~:text=Cloud%20server%20using%20100%%20green%20electricity:%20160%20kg%20CO2e%20/%20year%20and%20server)
 )
-- Cluster node of 2 cpu. We approximate **1 node is 1 server**
+- Cluster node of 2 CPUs. We approximate **1 node is 1 server**
 - **15 pods per node**
 
 With this assumption, the mean consumption of CO2 per pod in a year is 160 / 15 = **11 Kg CO2eq / year per pod**.
@@ -32,15 +32,15 @@ import ConsumptionCalculator from '../src/components/ConsumptionCalculator'
 
 ### What resources are supported?
 
-*kube-green* add default support to `Deployments`, `StatefulSets`, and `CronJobs`,
-but it is possible to add support for other resources using the patches feature. More information are available
+*kube-green* adds default support to `Deployments`, `StatefulSets`, and `CronJobs`,
+but it is possible to add support for other resources using the patches feature. More information is available
 in the [configuration](configuration.md) section.
 
 ### How can I contribute to the project?
 
 You can contribute to the project in many ways.
 
-If you are using *kube-green*, you can list as [adopter](./adopters.md).
+If you are using *kube-green*, you can list yourself as an [adopter](./adopters.md).
 
 If you have some feedback, open an issue or a discussion in the [GitHub repository](https://github.com/kube-green/kube-green).
 

@@ -19,3 +19,7 @@
 - organization: Davidson Consulting
   description: We have installed the kube-green operator on our OKD pre-production cluster in order to automatically scale-down the workloads in non-business hours. And, this helps a lot in reducing the resource consumption.
   website: https://www.davidson.group
+- organization: CloudRaft
+  description: We actively optimize Kubernetes infrastructure to reduce energy consumption and lower carbon footprint for development and test workloads, helping teams align with green technology goals and operational excellence.
+  website: https://www.cloudraft.io
+

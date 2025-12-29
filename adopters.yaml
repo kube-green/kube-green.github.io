@@ -22,4 +22,6 @@
 - organization: CloudRaft
   description: We actively optimize Kubernetes infrastructure to reduce energy consumption and lower carbon footprint for development and test workloads, helping teams align with green technology goals and operational excellence.
   website: https://www.cloudraft.io
-
+- organization: Jump
+  description: We use KubeGreen to stop non-critical workloads in our dev environment outside business hours and wake up in the morning. We have saved 75% of our AWS EC2 instances monthly bill in our dev account.
+  website: https://www.join-jump.com

@@ -25,3 +25,6 @@
 - organization: Jump
   description: We use KubeGreen to stop non-critical workloads in our dev environment outside business hours and wake up in the morning. We have saved 75% of our AWS EC2 instances monthly bill in our dev account.
   website: https://www.join-jump.com
+- organization: Tasrie IT Services
+  description: We use kube-green to automatically schedule non-production Kubernetes workloads to sleep during off-hours by defining SleepInfo policies for namespaces and applications. This allows us to scale down idle Deployments and CronJobs during nights and weekends and safely restore them during working hours, reducing unnecessary resource consumption, lowering cloud costs, and supporting sustainability goals without impacting production workloads.
+  website: https://tasrieit.com

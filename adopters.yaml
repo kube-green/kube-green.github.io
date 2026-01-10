@@ -22,4 +22,6 @@
 - organization: CloudRaft
   description: We actively optimize Kubernetes infrastructure to reduce energy consumption and lower carbon footprint for development and test workloads, helping teams align with green technology goals and operational excellence.
   website: https://www.cloudraft.io
-
+- organization: Tasrie IT Services
+  description: We use kube-green to automatically schedule non-production Kubernetes workloads to sleep during off-hours by defining SleepInfo policies for namespaces and applications. This allows us to scale down idle Deployments and CronJobs during nights and weekends and safely restore them during working hours, reducing unnecessary resource consumption, lowering cloud costs, and supporting sustainability goals without impacting production workloads.
+  website: https://tasrieit.com

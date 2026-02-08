@@ -71,7 +71,7 @@ The following configuration sets a sleep time to 20:00 from Monday to Friday (in
 apiVersion: kube-green.com/v1alpha1
 kind: SleepInfo
 metadata:
-  name: no-wakep-up
+  name: no-wake-up
 spec:
   weekdays: "1-5"
   sleepAt: "20:00"

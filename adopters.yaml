@@ -28,3 +28,6 @@
 - organization: Tasrie IT Services
   description: We use kube-green to automatically schedule non-production Kubernetes workloads to sleep during off-hours by defining SleepInfo policies for namespaces and applications. This allows us to scale down idle Deployments and CronJobs during nights and weekends and safely restore them during working hours, reducing unnecessary resource consumption, lowering cloud costs, and supporting sustainability goals without impacting production workloads.
   website: https://tasrieit.com
+- organization: Wordfully
+  description: Wordfully helps users proofread and rephrase their writing. It uses kube-green to suspend development and testing workloads outside working hours.
+  website: https://wordfully.ai
